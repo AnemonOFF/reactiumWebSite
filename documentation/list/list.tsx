@@ -1,6 +1,9 @@
-import { List, ListItem } from "../../reactiumui";
 import { apiRows } from "../common";
 import { DocData } from "../types";
+import ExampleCustomMarker from "./customMarker";
+import ExampleDefault from "./default";
+import ExampleOtherListStyleType from "./otherListStyleType";
+import ExampleUnorderedGeorgian from "./unorderedGeorgian";
 
 const ListDoc: DocData = {
     name: 'List',
@@ -43,75 +46,27 @@ const ListDoc: DocData = {
         {
             name: 'Default',
             uid: 'default',
-            isResponsive: false,
-            code: (
-                <List>
-                    <ListItem>First element</ListItem>
-                    <ListItem>Second element</ListItem>
-                    <ListItem>Third element</ListItem>
-                </List>
-            ),
-            exampleCode: `<List>
-    <ListItem>First element</ListItem>
-    <ListItem>Second element</ListItem>
-    <ListItem>Third element</ListItem>
-</List>`,
+            code: <ExampleDefault />,
+            codeFilePath: 'documentation/list/default.tsx'
         },
         {
             name: 'Unordered georgian',
             uid: 'unorderedgeorgian',
             description: 'If you want to disable reactium styles for marker, set \'defaultMarkerStyle\' to item',
-            isResponsive: false,
-            code: (
-                <List listType="unordered">
-                    <ListItem>First element</ListItem>
-                    <ListItem>Second element</ListItem>
-                    <ListItem defaultMarkerStyle>Third element</ListItem>
-                </List>
-            ),
-            exampleCode: `<List listType="unordered" listStyleType="georgian">
-    <ListItem>First element</ListItem>
-    <ListItem>Second element</ListItem>
-    <ListItem>Third element</ListItem>
-</List>`
+            code: <ExampleUnorderedGeorgian />,
+            codeFilePath: 'documentation/list/unorderedGeorgian.tsx'
         },
         {
             name: 'Other list style type',
             uid: 'otherliststyletype',
-            isResponsive: false,
-            code: (
-                <List listStyleType="georgian">
-                    <ListItem>First element</ListItem>
-                    <ListItem>Second element</ListItem>
-                    <ListItem>Third element</ListItem>
-                </List>
-            ),
-            exampleCode: `<List listStyleType="georgian">
-    <ListItem>First element</ListItem>
-    <ListItem>Second element</ListItem>
-    <ListItem>Third element</ListItem>
-</List>`
+            code: <ExampleOtherListStyleType />,
+            codeFilePath: 'documentation/list/otherListStyleType.tsx'
         },
         {
             name: 'Custom marker',
             uid: 'custommarker',
-            isResponsive: false,
-            code: (
-                <List customMarkerContent="👉">
-                    <ListItem>First element</ListItem>
-                    <ListItem>Second element</ListItem>
-                    <ListItem>Third element</ListItem>
-                    <ListItem customMarkerContent="🤜">Fourth element</ListItem>
-                    <ListItem customMarkerContent="🤙">Fifth element</ListItem>
-                </List>
-            ),
-             exampleCode: `<List customMarkerContent="👉">
-    <ListItem>First element</ListItem>
-    <ListItem>Second element</ListItem>
-    <ListItem>Third element</ListItem>
-    <ListItem customMarkerContent="🤜">Fourth element</ListItem>
-    <ListItem customMarkerContent="🤙">Fifth element</ListItem>
-</List>`
+            code: <ExampleCustomMarker />,
+            codeFilePath: 'documentation/list/customMarker.tsx'
         }
     ]
 }

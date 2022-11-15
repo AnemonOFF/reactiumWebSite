@@ -1,6 +1,11 @@
-import { Card, Container, Text } from '../../reactiumui';
 import { apiRows } from '../common';
 import { DocData } from '../types';
+import ExampleBackground from './background';
+import ExampleBordered from './bordered';
+import ExampleDefault from './default';
+import ExamplePressable from './pressable';
+import ExampleSquare from './square';
+import ExampleTypes from './types';
 
 const CardDoc: DocData = {
     name: 'Card',
@@ -31,98 +36,45 @@ const CardDoc: DocData = {
             uid: 'default',
             description: 'By default card will fill full width of its parent element',
             isResponsive: false,
-            code: (
-                <Card css={{p: 10}}>
-                    <Text>Default card component</Text>
-                </Card>
-            ),
-            exampleCode: `<Card>
-    <Text>Default card component</Text>
-</Card>`
+            code: <ExampleDefault />,
+            codeFilePath: 'documentation/card/default.tsx'
         },
         {
             name: 'Types',
             uid: 'types',
             isResponsive: false,
-            code: (
-                <Container>
-                    <Card css={{p: 10, my: 10}} type={'cloud'}><Text>Cloud card</Text></Card>
-                    <Card css={{p: 10, my: 10}} type={'flat'}><Text>Flat card</Text></Card>
-                </Container>
-            ),
-            exampleCode: `<Container>
-    <Card type={'cloud'}><Text>Cloud card</Text></Card>
-    <Card type={'flat'}><Text>Flat card</Text></Card>
-</Container>`
+            code: <ExampleTypes />,
+            codeFilePath: 'documentation/card/types.tsx'
         },
         {
             name: 'Bordered',
             uid: 'bordered',
             isResponsive: false,
             description: 'Card can be with it`s own border',
-            code: (
-                <Card css={{p: 10}} border>
-                    <Text>Card with border</Text>
-                </Card>
-            ),
-            exampleCode: `<Card border>
-    <Text>Card with border</Text>
-</Card>`
+            code: <ExampleBordered />,
+            codeFilePath: 'documentation/card/bordered.tsx'
         },
         {
             name: 'Background',
             uid: 'background',
             isResponsive: false,
             description: 'You can set card background color that you want',
-            code: (
-                <Container>
-                    <Card css={{p: 10, my: 10}} color='primary'><Text>Primary card</Text></Card>
-                    <Card css={{p: 10, my: 10}} color='success'><Text>Success card</Text></Card>
-                    <Card css={{p: 10, my: 10}} color='error'><Text>Error card</Text></Card>
-                    <Card css={{p: 10, my: 10}} color='warning'><Text>Warning card</Text></Card>
-                    <Card css={{p: 10, my: 10}} color='$pink600'><Text>Pink card</Text></Card>
-                    <Card css={{p: 10, my: 10}} transparent><Text>Transparent card</Text></Card>
-                </Container>
-            ),
-            exampleCode: `<Container>
-    <Card color='primary'><Text>Primary card</Text></Card>
-    <Card color='success'><Text>Success card</Text></Card>
-    <Card color='error'><Text>Error card</Text></Card>
-    <Card color='warning'><Text>Warning card</Text></Card>
-    <Card color='$pink600'><Text>Pink card</Text></Card>
-    <Card transparent><Text>Transparent card</Text></Card>
-</Container>`
+            code: <ExampleBackground />,
+            codeFilePath: 'documentation/card/background.tsx'
         },
         {
             name: 'Square',
             uid: 'square',
             isResponsive: false,
-            code: (
-                <Container>
-                    <Card css={{p: 10, my: 10}} square>
-                        <Text>Square card</Text>
-                    </Card>
-                    <Card css={{p: 10, my: 10}} type='flat' square>
-                        <Text>Square flat card</Text>
-                    </Card>
-                </Container>
-            ),
-            exampleCode: `<Card css={{p: 10}} square>
-    <Text>Square card</Text>
-</Card>`
+            code: <ExampleSquare />,
+            codeFilePath: 'documentation/card/square.tsx'
         },
         {
             name: 'Pressable',
             uid: 'pressable',
             isResponsive: false,
-            code: (
-                <Card css={{p: 10}} isPressable>
-                    <Text>Press me!</Text>
-                </Card>
-            ),
-            exampleCode: `<Card css={{p: 10}} isPressable>
-    <Text>Press me!</Text>
-</Card>`
+            code: <ExamplePressable />,
+            codeFilePath: 'documentation/card/pressable.tsx'
         }
     ]
 }

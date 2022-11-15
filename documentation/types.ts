@@ -5,7 +5,7 @@ export type DocExample = {
     name: string,
     description?: string,
     code: ReactNode,
-    exampleCode: string,
+    codeFilePath: string,
     isResponsive?: boolean,
     isFramed?: boolean,
 }

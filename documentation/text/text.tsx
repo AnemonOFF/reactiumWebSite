@@ -1,6 +1,9 @@
 import { Container, Text } from "../../reactiumui";
 import { apiRows } from "../common";
 import { DocData } from "../types";
+import ExampleColorsAndGradient from "./colorsAndGradient";
+import ExampleQuote from "./quote";
+import ExampleTags from "./tags";
 
 const TextDoc: DocData = {
     name: 'Text',
@@ -38,59 +41,22 @@ const TextDoc: DocData = {
             name: 'Tags',
             uid: 'tags',
             description: 'You can set any text tag you want, or more than one',
-            isResponsive: false,
-            code: (
-                <Container>
-                    <Text h2>Lorem ipsum dolor sit amet, consectetur adipiscing elit</Text>
-                    <Text p h3>Lorem ipsum dolor sit amet, consectetur adipiscing elit</Text>
-                    <Text h5>Lorem ipsum dolor sit amet, consectetur adipiscing elit</Text>
-                    <Text h6 em>Lorem ipsum dolor sit amet, consectetur adipiscing elit</Text>
-                    <Text>Lorem ipsum dolor sit amet, consectetur adipiscing elit</Text>
-                    <Text i b>Lorem ipsum dolor sit amet, consectetur adipiscing elit</Text>
-                </Container>
-            ),
-            exampleCode: `<Container>
-    <Text h2>Lorem ipsum dolor sit amet, consectetur adipiscing elit</Text>
-    <Text p h3>Lorem ipsum dolor sit amet, consectetur adipiscing elit</Text>
-    <Text h5>Lorem ipsum dolor sit amet, consectetur adipiscing elit</Text>
-    <Text h6 em>Lorem ipsum dolor sit amet, consectetur adipiscing elit</Text>
-    <Text>Lorem ipsum dolor sit amet, consectetur adipiscing elit</Text>
-    <Text i b>Lorem ipsum dolor sit amet, consectetur adipiscing elit</Text>
-</Container>`
+            code: <ExampleTags />,
+            codeFilePath: 'documentation/text/tags.tsx'
         },
         {
             name: 'Quote',
             uid: 'quote',
             description: 'To make quote just set \'blockquote\' tag',
-            isResponsive: false,
-            code: (
-                <Text blockquote>Lorem ipsum dolor sit amet, consectetur adipiscing elit</Text>
-            ),
-            exampleCode: `<Text blockquote>Lorem ipsum dolor sit amet, consectetur adipiscing elit</Text>`
+            code: <ExampleQuote />,
+            codeFilePath: 'documentation/text/quote.tsx'
         },
         {
             name: 'Colors and gradient',
             uid: 'colorsandgradient',
             description: 'You can set any color / gradient you want or themed colors without \'$\' symbol',
-            isResponsive: false,
-            code: (
-                <Container>
-                    <Text color="primary" weight="bold">Lorem ipsum dolor sit amet, consectetur adipiscing elit</Text>
-                    <Text color="success" weight="bold">Lorem ipsum dolor sit amet, consectetur adipiscing elit</Text>
-                    <Text color="error" weight="bold">Lorem ipsum dolor sit amet, consectetur adipiscing elit</Text>
-                    <Text color="warn" weight="bold">Lorem ipsum dolor sit amet, consectetur adipiscing elit</Text>
-                    <Text color="$pink600" weight="bold">Lorem ipsum dolor sit amet, consectetur adipiscing elit</Text>
-                    <Text gradient={['$green600', '$blue600', '$red600']} fontSize="$3xl" weight="bold">Lorem ipsum dolor sit amet, consectetur adipiscing elit</Text>
-                </Container>
-            ),
-            exampleCode: `<Container>
-    <Text color="primary" weight="bold">Lorem ipsum dolor sit amet, consectetur adipiscing elit</Text>
-    <Text color="success" weight="bold">Lorem ipsum dolor sit amet, consectetur adipiscing elit</Text>
-    <Text color="error" weight="bold">Lorem ipsum dolor sit amet, consectetur adipiscing elit</Text>
-    <Text color="warn" weight="bold">Lorem ipsum dolor sit amet, consectetur adipiscing elit</Text>
-    <Text color="$pink600" weight="bold">Lorem ipsum dolor sit amet, consectetur adipiscing elit</Text>
-    <Text gradient={['$green600', '$blue600', '$red600']} fontSize="$3xl" weight="bold">Lorem ipsum dolor sit amet, consectetur adipiscing elit</Text>
-</Container>`
+            code: <ExampleColorsAndGradient />,
+            codeFilePath: 'documentation/text/colorsAndGradient.tsx'
         }
     ]
 }

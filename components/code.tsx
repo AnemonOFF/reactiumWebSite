@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { styled } from "../reactiumui";
 
 export type CodeProps = {
@@ -10,6 +10,8 @@ export type CodeProps = {
 const StyledWrapper = styled('div', {
     position: 'relative',
     my: '$xs',
+    background: '$grayDark200',
+    borderRadius: '$xl',
     variants: {
         fit: {
             true: {
@@ -20,9 +22,9 @@ const StyledWrapper = styled('div', {
 })
 
 const StyledPre = styled('pre', {
-    background: '$grayDark200 !important',
+    background: 'unset !important',
     maxHeight: 485,
-    borderRadius: '$xl !important',
+    borderRadius: 'unset !important',
     m: '0 !important',
     py: '$sm !important',
     px: 'calc($sm + 37px) !important',
@@ -31,6 +33,13 @@ const StyledPre = styled('pre', {
     '&::-webkit-scrollbar': {
         display: 'none'
     },
+    variants: {
+        full: {
+            true: {
+                maxHeight: 'none'
+            }
+        }
+    }
 })
 
 const StyledCopy = styled('button', {
@@ -51,18 +60,62 @@ const StyledCopy = styled('button', {
     }
 })
 
+const StyledFooter = styled('div', {
+    width: '100%',
+    borderTop: '1px solid $gray700',
+    p: 10
+})
+
+const StyledMoreButton = styled('button', {
+    background: 'transparent',
+    border: 'none',
+    color: '$accent',
+    p: 0,
+    m: 0,
+    fontSize: '$sm',
+    cursor: 'pointer'
+})
+
 const Code: React.FunctionComponent<CodeProps> = ({ code, language, fit = false }) => {
+    const [isOverflowed, setIsOverflowed] = useState<boolean>();
+    const [isFull, setIsFull] = useState<boolean>(false);
+    const preRef = useRef<HTMLPreElement>(null);
+
+    useEffect(() => {
+        if(!preRef.current)
+            return;
+        const el = preRef.current;
+        var curOverflow = el.style.overflow;
+        if ( !curOverflow || curOverflow === "visible" )
+           el.style.overflow = "hidden";
+        
+        var isOverflowing = el.clientWidth < el.scrollWidth 
+           || el.clientHeight < el.scrollHeight;
+        
+        el.style.overflow = curOverflow;
+        setIsOverflowed(isOverflowing);
+    }, [setIsOverflowed, code, fit])
+
     const copy = () => {
         navigator.clipboard.writeText(code);
     }
 
+    const changePreSize = () => {
+        setIsFull(old => !old);
+    }
+
     return (
         <StyledWrapper fit={fit}>
-            <StyledPre className={`line-numbers language-${language}`} tabIndex={0}>
+            <StyledPre ref={preRef} className={`line-numbers language-${language}`} full={isOverflowed && isFull} tabIndex={0}>
                 <code className={`language-${language}`}>
                     {code}
                 </code>
             </StyledPre>
+            {isOverflowed && 
+                <StyledFooter>
+                    <StyledMoreButton onClick={changePreSize}>{isFull ? 'Hide' : 'Show'} full code</StyledMoreButton>
+                </StyledFooter>
+            }
             <StyledCopy onClick={copy}>
                     <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
                     	 viewBox="0 0 210.107 210.107" enableBackground="new 0 0 210.107 210.107" xmlSpace="preserve">

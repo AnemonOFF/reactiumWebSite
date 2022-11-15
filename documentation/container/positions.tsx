@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Card, Container, Text } from "../../reactiumui";
 
-const ExampleOverflow: React.FunctionComponent = () => {
+const ExamplePositions: React.FunctionComponent = () => {
     const [count, setCount] = useState(8);
 
     return (
@@ -17,4 +17,4 @@ const ExampleOverflow: React.FunctionComponent = () => {
     )
 }
 
-export default ExampleOverflow;
+export default ExamplePositions;

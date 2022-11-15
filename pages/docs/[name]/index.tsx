@@ -11,19 +11,28 @@ import Prism from "prismjs";
 import "prismjs/themes/prism-okaidia.min.css";
 import "prismjs/plugins/line-numbers/prism-line-numbers.min.css";
 import Iframe from "../../../components/iframe";
+import { readFile } from "fs/promises";
+import { readFileSync } from "fs";
 require("prismjs/components/prism-jsx.min.js");
 require("prismjs/components/prism-tsx.min.js");
 require("prismjs/plugins/line-numbers/prism-line-numbers.min.js");
 
 export const getServerSideProps: GetServerSideProps = async (context) => {
+    const name = context.query.name as string;
+    const doc = GetComponentDoc(name);
+    let codes;
+    if(doc !== undefined)
+        codes = Object.fromEntries(doc.examples.map(e => [e.uid, readFileSync(e.codeFilePath).toString()]));
+
     return {
         props: {
-            name: context.query.name
+            name,
+            codes
         }
     }
 }
 
-const ComponentDocPage: NextPage<{name: string}> = ({ name }) => {
+const ComponentDocPage: NextPage<{name: string, codes: {[uid: string]: string}}> = ({ name, codes }) => {
     const componentDoc = GetComponentDoc(name);
 
     useEffect(() => {
@@ -45,7 +54,7 @@ const ComponentDocPage: NextPage<{name: string}> = ({ name }) => {
                 <Text h3 css={{my: '$xs'}}>{example.name}</Text>
                 {example.description && <Text>{example.description}</Text>}
                 {responsive}
-                <Code language="tsx" code={example.exampleCode}/>
+                <Code language="tsx" code={codes[example.uid]}/>
             </div>
         )
     });

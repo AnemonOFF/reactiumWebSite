@@ -1,6 +1,6 @@
 import { List, ListItem, Text, Table, TableBody, TableCell, TableColumn, TableHeader, TableRow } from "../../reactiumui";
 
-const StyleVariants: React.FunctionComponent = () => {
+const ExampleStyleVariants: React.FunctionComponent = () => {
     const data = [
         {id: 1, name: 'Andrew', age: 27, gender: 'Male'},
         {id: 7, name: 'Jane', age: 25, gender: 'Female'},
@@ -42,4 +42,4 @@ const StyleVariants: React.FunctionComponent = () => {
     )
 }
 
-export default StyleVariants;
+export default ExampleStyleVariants;

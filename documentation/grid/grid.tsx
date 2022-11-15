@@ -1,6 +1,10 @@
-import { Card, Grid, GridItem, GridRow } from "../../reactiumui";
-import { apiBreakpointsRows, apiRows } from "../common";
+import { apiRows } from "../common";
 import { DocData } from "../types";
+import ExampleCustomColumns from "./customColumns";
+import ExampleDefault from "./default";
+import ExampleFixedAndPixels from "./fixedAndPixels";
+import ExampleGap from "./gap";
+import ExampleRows from "./rows";
 
 const requiredChildrenProp = apiRows['children'];
 requiredChildrenProp.isRequired = true;
@@ -78,230 +82,40 @@ const GridDoc: DocData = {
             name: 'Default',
             uid: 'default',
             isResponsive: true,
-            code: (
-                <Grid>
-                    <GridItem>
-                        <Card type='flat' css={{height: 100, width: '100%', p: 10}}>1 of 3</Card>
-                    </GridItem>
-                    <GridItem>
-                        <Card type='flat' css={{height: 100, width: '100%', p: 10}}>2 of 3</Card>
-                    </GridItem>
-                    <GridItem>
-                        <Card type='flat' css={{height: 100, width: '100%', p: 10}}>3 of 3</Card>
-                    </GridItem>
-                </Grid>
-            ),
-            exampleCode: `<Grid>
-    <GridItem>
-        <Card type='flat' css={{height: 100, width: '100%', p: 10}}>1 of 3</Card>
-    </GridItem>
-    <GridItem>
-        <Card type='flat' css={{height: 100, width: '100%', p: 10}}>2 of 3</Card>
-    </GridItem>
-    <GridItem>
-        <Card type='flat' css={{height: 100, width: '100%', p: 10}}>3 of 3</Card>
-    </GridItem>
-</Grid>`
+            code: <ExampleDefault />,
+            codeFilePath: 'documentation/grid/default.tsx'
         },
         {
             name: 'Custom columns',
             uid: 'customcolumns',
             description: 'By default, grid have 12 columns, if you want custom count, just set it by \'columns\' tag. To create new row, just fill previous.',
             isResponsive: true,
-            code: (
-                <Grid columns={10}>
-                    <GridItem all={6}>
-                        <Card type='flat' css={{height: 100, width: '100%', p: 10}}>1 of 6</Card>
-                    </GridItem>
-                    <GridItem all={2}>
-                        <Card type='flat' css={{height: 100, width: '100%', p: 10}}>2 of 6</Card>
-                    </GridItem>
-                    <GridItem all={2}>
-                        <Card type='flat' css={{height: 100, width: '100%', p: 10}}>3 of 6</Card>
-                    </GridItem>
-                    <GridItem all={3}>
-                        <Card type='flat' css={{height: 100, width: '100%', p: 10}}>4 of 6</Card>
-                    </GridItem>
-                    <GridItem all={3}>
-                        <Card type='flat' css={{height: 100, width: '100%', p: 10}}>5 of 6</Card>
-                    </GridItem>
-                    <GridItem all={4}>
-                        <Card type='flat' css={{height: 100, width: '100%', p: 10}}>6 of 6</Card>
-                    </GridItem>
-                </Grid>
-            ),
-            exampleCode: `<Grid columns={10}>
-    <GridItem all={6}>
-        <Card type='flat' css={{height: 100, width: '100%', p: 10}}>1 of 6</Card>
-    </GridItem>
-    <GridItem all={2}>
-        <Card type='flat' css={{height: 100, width: '100%', p: 10}}>2 of 6</Card>
-    </GridItem>
-    <GridItem all={2}>
-        <Card type='flat' css={{height: 100, width: '100%', p: 10}}>3 of 6</Card>
-    </GridItem>
-    <GridItem all={3}>
-        <Card type='flat' css={{height: 100, width: '100%', p: 10}}>4 of 6</Card>
-    </GridItem>
-    <GridItem all={3}>
-        <Card type='flat' css={{height: 100, width: '100%', p: 10}}>5 of 6</Card>
-    </GridItem>
-    <GridItem all={4}>
-        <Card type='flat' css={{height: 100, width: '100%', p: 10}}>6 of 6</Card>
-    </GridItem>
-</Grid>`
+            code: <ExampleCustomColumns />,
+            codeFilePath: 'documentation/grid/customColumns.tsx'
         },
         {
             name: 'Rows',
             uid: 'rows',
             description: 'If you want to use habitual rows, you can. Moreover, you can set custom count of columns for each row',
             isResponsive: true,
-            code: (
-                <Grid>
-                    <GridRow>
-                        <GridItem all={5}>
-                            <Card type='flat' css={{height: 100, width: '100%', p: 10}}>1 of 6</Card>
-                        </GridItem>
-                        <GridItem all={2}>
-                            <Card type='flat' css={{height: 100, width: '100%', p: 10}}>2 of 6</Card>
-                        </GridItem>
-                        <GridItem all={5}>
-                            <Card type='flat' css={{height: 100, width: '100%', p: 10}}>3 of 6</Card>
-                        </GridItem>
-                    </GridRow>
-                    <GridRow columns={20}>
-                        <GridItem all={7}>
-                            <Card type='flat' css={{height: 100, width: '100%', p: 10}}>4 of 6</Card>
-                        </GridItem>
-                        <GridItem all={9}>
-                            <Card type='flat' css={{height: 100, width: '100%', p: 10}}>5 of 6</Card>
-                        </GridItem>
-                        <GridItem all={4}>
-                            <Card type='flat' css={{height: 100, width: '100%', p: 10}}>6 of 6</Card>
-                        </GridItem>
-                    </GridRow>
-                </Grid>
-            ),
-            exampleCode: `<Grid>
-    <GridRow>
-        <GridItem all={5}>
-            <Card type='flat' css={{height: 100, width: '100%', p: 10}}>1 of 6</Card>
-        </GridItem>
-        <GridItem all={2}>
-            <Card type='flat' css={{height: 100, width: '100%', p: 10}}>2 of 6</Card>
-        </GridItem>
-        <GridItem all={5}>
-            <Card type='flat' css={{height: 100, width: '100%', p: 10}}>3 of 6</Card>
-        </GridItem>
-    </GridRow>
-    <GridRow columns={20}>
-        <GridItem all={7}>
-            <Card type='flat' css={{height: 100, width: '100%', p: 10}}>4 of 6</Card>
-        </GridItem>
-        <GridItem all={9}>
-            <Card type='flat' css={{height: 100, width: '100%', p: 10}}>5 of 6</Card>
-        </GridItem>
-        <GridItem all={4}>
-            <Card type='flat' css={{height: 100, width: '100%', p: 10}}>6 of 6</Card>
-        </GridItem>
-    </GridRow>
-</Grid>`
+            code: <ExampleRows />,
+            codeFilePath: 'documentation/grid/rows.tsx'
         },
         {
             name: 'Gap',
             uid: 'gap',
             description: 'To set space size between items, use columnGap, rowGap or gap (combines the previous two) tags. Of course, you can set for each GridRow custom value of columnGap',
             isResponsive: true,
-            code: (
-                <Grid columnGap={20} rowGap={10}>
-                    <GridItem all={6}>
-                        <Card type='flat' css={{height: 100, width: '100%', p: 10}}>1 of 6</Card>
-                    </GridItem>
-                    <GridItem all={3}>
-                        <Card type='flat' css={{height: 100, width: '100%', p: 10}}>2 of 6</Card>
-                    </GridItem>
-                    <GridItem all={3}>
-                        <Card type='flat' css={{height: 100, width: '100%', p: 10}}>3 of 6</Card>
-                    </GridItem>
-                    <GridItem all={3}>
-                        <Card type='flat' css={{height: 100, width: '100%', p: 10}}>4 of 6</Card>
-                    </GridItem>
-                    <GridItem all={4}>
-                        <Card type='flat' css={{height: 100, width: '100%', p: 10}}>5 of 6</Card>
-                    </GridItem>
-                    <GridItem all={5}>
-                        <Card type='flat' css={{height: 100, width: '100%', p: 10}}>6 of 6</Card>
-                    </GridItem>
-                </Grid>
-            ),
-            exampleCode: `<Grid columnGap={20} rowGap={10}>
-    <GridItem all={6}>
-        <Card type='flat' css={{height: 100, width: '100%', p: 10}}>1 of 6</Card>
-    </GridItem>
-    <GridItem all={3}>
-        <Card type='flat' css={{height: 100, width: '100%', p: 10}}>2 of 6</Card>
-    </GridItem>
-    <GridItem all={3}>
-        <Card type='flat' css={{height: 100, width: '100%', p: 10}}>3 of 6</Card>
-    </GridItem>
-    <GridItem all={3}>
-        <Card type='flat' css={{height: 100, width: '100%', p: 10}}>4 of 6</Card>
-    </GridItem>
-    <GridItem all={4}>
-        <Card type='flat' css={{height: 100, width: '100%', p: 10}}>5 of 6</Card>
-    </GridItem>
-    <GridItem all={5}>
-        <Card type='flat' css={{height: 100, width: '100%', p: 10}}>6 of 6</Card>
-    </GridItem>
-</Grid>`
+            code: <ExampleGap />,
+            codeFilePath: 'documentation/grid/gap.tsx'
         },
         {
             name: 'Fixed and pixels',
             uid: 'fixedandpixels',
             description: 'If you want to make one of the item be fixed with width in pixels, set flat \'fixed\' and set width as columns. To make this item responsive, set \'fixed\' to \'max\'',
             isResponsive: true,
-            code: (
-                <Grid>
-                    <GridItem fixed all={300}>
-                        <Card type='flat' css={{height: 100, width: '100%', p: 10}}>1 of 6</Card>
-                    </GridItem>
-                    <GridItem all={3}>
-                        <Card type='flat' css={{height: 100, width: '100%', p: 10}}>2 of 6</Card>
-                    </GridItem>
-                    <GridItem all={3}>
-                        <Card type='flat' css={{height: 100, width: '100%', p: 10}}>3 of 6</Card>
-                    </GridItem>
-                    <GridItem all={3}>
-                        <Card type='flat' css={{height: 100, width: '100%', p: 10}}>4 of 6</Card>
-                    </GridItem>
-                    <GridItem all={3}>
-                        <Card type='flat' css={{height: 100, width: '100%', p: 10}}>5 of 6</Card>
-                    </GridItem>
-                    <GridItem fixed='max' all={500}>
-                        <Card type='flat' css={{height: 100, width: '100%', p: 10}}>6 of 6</Card>
-                    </GridItem>
-                </Grid>
-            ),
-            exampleCode: `<Grid>
-    <GridItem fixed all={300}>
-        <Card type='flat' css={{height: 100, width: '100%', p: 10}}>1 of 6</Card>
-    </GridItem>
-    <GridItem all={3}>
-        <Card type='flat' css={{height: 100, width: '100%', p: 10}}>2 of 6</Card>
-    </GridItem>
-    <GridItem all={3}>
-        <Card type='flat' css={{height: 100, width: '100%', p: 10}}>3 of 6</Card>
-    </GridItem>
-    <GridItem all={3}>
-        <Card type='flat' css={{height: 100, width: '100%', p: 10}}>4 of 6</Card>
-    </GridItem>
-    <GridItem all={4}>
-        <Card type='flat' css={{height: 100, width: '100%', p: 10}}>5 of 6</Card>
-    </GridItem>
-    <GridItem fixed all={400}>
-        <Card type='flat' css={{height: 100, width: '100%', p: 10}}>6 of 6</Card>
-    </GridItem>
-</Grid>`
+            code: <ExampleFixedAndPixels />,
+            codeFilePath: 'documentation/grid/fixedAndPixels.tsx'
         }
     ]
 }

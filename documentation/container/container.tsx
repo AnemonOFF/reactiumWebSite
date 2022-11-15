@@ -1,7 +1,9 @@
-import { Card, Container, Text } from '../../reactiumui';
 import { apiBreakpointsRows, apiRows } from '../common';
 import { DocData } from '../types';
-import ExampleOverflow from './exampleOverflow';
+import ExampleCentralized from './centralized';
+import ExampleDefault from './default';
+import ExampleFixedWidth from './fixedWidth';
+import ExamplePositions from './positions';
 
 const ContainerDoc: DocData = {
     name: 'Container',
@@ -34,52 +36,22 @@ const ContainerDoc: DocData = {
             isResponsive: true,
             name: 'Default',
             uid: 'default',
-            code: (
-                <Container all={400} css={{m: '$xs'}}>
-                    <Card css={{ minWidth: 200, minHeight: 200, p: 10 }} color="primary">
-                        <Text h4 color='$white'>Simple container with card</Text>
-                    </Card>
-                </Container>
-            ),
-            exampleCode: `<Container all={400} css={{m: '$xs'}}>
-    <Card css={{ minWidth: 200, minHeight: 200, p: 10 }} color="primary">
-        <Text h4 color='$white'>Simple container with card</Text>
-    </Card>
-</Container>`
+            code: <ExampleDefault />,
+            codeFilePath: 'documentation/container/default.tsx'
         },
         {
             isResponsive: true,
             name: 'Fixed width',
             uid: 'fixedwidth',
-            code: (
-                <Container all={400} fixed css={{m: '$xs'}}>
-                    <Card css={{ minWidth: 200, minHeight: 200, p: 10 }} color="primary">
-                        <Text h4 color='$white'>I`m fixed. Try to change my size!</Text>
-                    </Card>
-                </Container>
-            ),
-            exampleCode: `<Container all={400} fixed css={{m: '$xs'}}>
-    <Card css={{ minWidth: 200, minHeight: 200, p: 10 }} color="primary">
-        <Text h4 color='$white'>I\`m fixed. Try to change my size!</Text>
-    </Card>
-</Container>`
+            code: <ExampleFixedWidth />,
+            codeFilePath: 'documentation/container/fixedWidth.tsx'
         },
         {
             isResponsive: true,
             name: 'Centralized',
             uid: 'centralized',
-            code: (
-                <Container all={400} center css={{m: '$xs'}}>
-                    <Card css={{ minWidth: 200, minHeight: 200, p: 10 }} color="primary">
-                        <Text h4 color='$white'>Look, I am in center!</Text>
-                    </Card>
-                </Container>
-            ),
-            exampleCode: `<Container all={400} center css={{m: '$xs'}}>
-    <Card css={{ minWidth: 200, minHeight: 200, p: 10 }} color="primary">
-        <Text h4 color='$white'>Look, I am in center!</Text>
-    </Card>
-</Container>`
+            code: <ExampleCentralized />,
+            codeFilePath: 'documentation/container/centralized.tsx'
         },
         {
             name: 'Positions',
@@ -87,29 +59,8 @@ const ContainerDoc: DocData = {
             isFramed: true,
             isResponsive: true,
             description: 'Change elements count by pressing \'+1\' and \'-1\' buttons and look what`s happening. That`s working same for width',
-            code: (
-                <ExampleOverflow />
-            ),
-            exampleCode: `import { useState } from "react";
-import { Card, Container, Text } from "../../reactiumui";
-
-const ExampleOverflow: React.FunctionComponent = () => {
-    const [count, setCount] = useState(8);
-
-    return (
-        <div style={{position: 'relative', height: '200vh', paddingLeft: '150px'}}>
-            <Container all='$breakpoints$xs' position='fixed' preventOverScreen css={{zIndex: '$1', top: 10, left: 10}}>
-                <Card css={{ p: 10 }} color="primary">
-                    {Array.from({length: count}, (_, i) => <Text color="white" key={i}>Element {i}</Text>)}
-                </Card>
-            </Container>
-            <button onClick={() => setCount(old => ++old)}>Add</button>
-            <button onClick={() => setCount(old => --old)}>Remove</button>
-        </div>
-    )
-}
-
-export default ExampleOverflow;`
+            code: <ExamplePositions />,
+            codeFilePath: 'documentation/container/positions.tsx'
         }
     ],
 };
