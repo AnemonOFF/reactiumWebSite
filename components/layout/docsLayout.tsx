@@ -40,7 +40,7 @@ const DocsLayout: React.FunctionComponent<Props> = ({ children }) => {
                 </NavbarCollapse>
             </Navbar>
             <Container all lg={'$breakpoints$lg'} fixed center css={{mt: '$xl'}}>
-                <Grid columns={6}>
+                <Grid columns={6} gap={15}>
                     <GridItem all={250} fixed hideOnmedia={'sm'}>
                         <Container position='fixed' preventOverScreen hideScroll>
                             <Text h2>Documentation</Text>

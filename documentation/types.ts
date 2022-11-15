@@ -1,11 +1,13 @@
 import { ReactNode } from "react"
 
 export type DocExample = {
+    uid: string,
     name: string,
     description?: string,
     code: ReactNode,
     exampleCode: string,
-    isResponsive: boolean
+    isResponsive?: boolean,
+    isFramed?: boolean,
 }
 
 export type ApiRow = {

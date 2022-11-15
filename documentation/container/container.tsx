@@ -33,15 +33,16 @@ const ContainerDoc: DocData = {
         {
             isResponsive: true,
             name: 'Default',
+            uid: 'default',
             code: (
-                <Container all='$breakpoints$xs'>
-                    <Card css={{ minWidth: 250, minHeight: 200, p: 10 }} color="primary">
+                <Container all={400} css={{m: '$xs'}}>
+                    <Card css={{ minWidth: 200, minHeight: 200, p: 10 }} color="primary">
                         <Text h4 color='$white'>Simple container with card</Text>
                     </Card>
                 </Container>
             ),
-            exampleCode: `<Container all='$breakpoints$xs'>
-    <Card css={{ minWidth: 250, minHeight: 200, p: 10 }} color="primary">
+            exampleCode: `<Container all={400} css={{m: '$xs'}}>
+    <Card css={{ minWidth: 200, minHeight: 200, p: 10 }} color="primary">
         <Text h4 color='$white'>Simple container with card</Text>
     </Card>
 </Container>`
@@ -49,15 +50,16 @@ const ContainerDoc: DocData = {
         {
             isResponsive: true,
             name: 'Fixed width',
+            uid: 'fixedwidth',
             code: (
-                <Container all='$breakpoints$xs' fixed>
-                    <Card css={{ minWidth: 250, minHeight: 200, p: 10 }} color="primary">
+                <Container all={400} fixed css={{m: '$xs'}}>
+                    <Card css={{ minWidth: 200, minHeight: 200, p: 10 }} color="primary">
                         <Text h4 color='$white'>I`m fixed. Try to change my size!</Text>
                     </Card>
                 </Container>
             ),
-            exampleCode: `<Container all='$breakpoints$xs' fixed>
-    <Card css={{ minWidth: 250, minHeight: 200, p: 10 }} color="primary">
+            exampleCode: `<Container all={400} fixed css={{m: '$xs'}}>
+    <Card css={{ minWidth: 200, minHeight: 200, p: 10 }} color="primary">
         <Text h4 color='$white'>I\`m fixed. Try to change my size!</Text>
     </Card>
 </Container>`
@@ -65,41 +67,49 @@ const ContainerDoc: DocData = {
         {
             isResponsive: true,
             name: 'Centralized',
+            uid: 'centralized',
             code: (
-                <Container all='$breakpoints$xs' center>
-                    <Card css={{ minWidth: 250, minHeight: 200, p: 10 }} color="primary">
+                <Container all={400} center css={{m: '$xs'}}>
+                    <Card css={{ minWidth: 200, minHeight: 200, p: 10 }} color="primary">
                         <Text h4 color='$white'>Look, I am in center!</Text>
                     </Card>
                 </Container>
             ),
-            exampleCode: `<Container all='$breakpoints$xs' center>
-    <Card css={{ minWidth: 250, minHeight: 200, p: 10 }} color="primary">
+            exampleCode: `<Container all={400} center css={{m: '$xs'}}>
+    <Card css={{ minWidth: 200, minHeight: 200, p: 10 }} color="primary">
         <Text h4 color='$white'>Look, I am in center!</Text>
     </Card>
 </Container>`
         },
         {
-            isResponsive: false,
             name: 'Positions',
-            description: 'Click on button and try to scroll / change browser width and height',
+            uid: 'positions',
+            isFramed: true,
+            isResponsive: true,
+            description: 'Change elements count by pressing \'+1\' and \'-1\' buttons and look what`s happening. That`s working same for width',
             code: (
                 <ExampleOverflow />
             ),
-            exampleCode: `const ExampleOverflow: React.FunctionComponent = () => {
-    const [isOpen, setIsOpen] = useState(false);
-    const a = Array.from({length: 20}, (_, i) => <Text key={i} h4 color='$white'>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore</Text>);
+            exampleCode: `import { useState } from "react";
+import { Card, Container, Text } from "../../reactiumui";
+
+const ExampleOverflow: React.FunctionComponent = () => {
+    const [count, setCount] = useState(8);
 
     return (
-        <div style={{position: 'relative'}}>
-            <button onClick={() => setIsOpen(old => !old)}>Toggle</button>
-            {isOpen && <Container all='$breakpoints$xs' position='absolute' preventOverScreen css={{zIndex: '$10'}}>
+        <div style={{position: 'relative', height: '200vh', paddingLeft: '150px'}}>
+            <Container all='$breakpoints$xs' position='fixed' preventOverScreen css={{zIndex: '$1', top: 10, left: 10}}>
                 <Card css={{ p: 10 }} color="primary">
-                    {a}
+                    {Array.from({length: count}, (_, i) => <Text color="white" key={i}>Element {i}</Text>)}
                 </Card>
-            </Container>}
+            </Container>
+            <button onClick={() => setCount(old => ++old)}>Add</button>
+            <button onClick={() => setCount(old => --old)}>Remove</button>
         </div>
     )
-}`
+}
+
+export default ExampleOverflow;`
         }
     ],
 };

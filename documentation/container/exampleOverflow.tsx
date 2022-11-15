@@ -2,17 +2,17 @@ import { useState } from "react";
 import { Card, Container, Text } from "../../reactiumui";
 
 const ExampleOverflow: React.FunctionComponent = () => {
-    const [isOpen, setIsOpen] = useState(false);
-    const a = Array.from({length: 20}, (_, i) => <Text key={i} h4 color='$white'>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore</Text>);
+    const [count, setCount] = useState(8);
 
     return (
-        <div style={{position: 'relative'}}>
-            <button onClick={() => setIsOpen(old => !old)}>Toggle</button>
-            {isOpen && <Container all='$breakpoints$xs' position='absolute' preventOverScreen css={{zIndex: '$10'}}>
+        <div style={{position: 'relative', height: '200vh', padding: '10px'}}>
+            <button onClick={() => setCount(old => ++old)}>+1</button>
+            <button onClick={() => setCount(old => --old)}>-1</button>
+            <Container all='$breakpoints$xs' position='fixed' preventOverScreen css={{zIndex: '$1', top: 40, left: 10}}>
                 <Card css={{ p: 10 }} color="primary">
-                    {a}
+                    {Array.from({length: count}, (_, i) => <Text color="white" key={i}>Element_number_{i}</Text>)}
                 </Card>
-            </Container>}
+            </Container>
         </div>
     )
 }

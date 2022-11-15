@@ -1,15 +1,16 @@
 import { GetServerSideProps, NextPage } from "next";
 import Error from "next/error";
 import Head from "next/head"
-import Code from "../../components/code";
-import DocsLayout from "../../components/layout/docsLayout";
-import Resizable from "../../components/resizable";
-import { GetComponentDoc } from "../../documentation";
-import { List, ListItem, Table, TableBody, TableCell, TableColumn, TableHeader, TableRow, Text } from "../../reactiumui";
+import Code from "../../../components/code";
+import DocsLayout from "../../../components/layout/docsLayout";
+import Resizable from "../../../components/resizable";
+import { GetComponentDoc } from "../../../documentation";
+import { List, ListItem, Table, TableBody, TableCell, TableColumn, TableHeader, TableRow, Text } from "../../../reactiumui";
 import { useEffect } from "react";
 import Prism from "prismjs";
 import "prismjs/themes/prism-okaidia.min.css";
 import "prismjs/plugins/line-numbers/prism-line-numbers.min.css";
+import Iframe from "../../../components/iframe";
 require("prismjs/components/prism-jsx.min.js");
 require("prismjs/components/prism-tsx.min.js");
 require("prismjs/plugins/line-numbers/prism-line-numbers.min.js");
@@ -36,23 +37,24 @@ const ComponentDocPage: NextPage<{name: string}> = ({ name }) => {
         <ListItem key={index}>{useCase}</ListItem>
     ));
 
-    const examples = componentDoc.examples.map((example, index) => (
-        <div key={index}>
-            <Text h3 css={{my: '$xs'}}>{example.name}</Text>
-            {example.description && <Text>{example.description}</Text>}
-            {example.isResponsive ?
-            <Resizable>{example.code}</Resizable> :
-            example.code
-            }
-            <Code language="tsx" code={example.exampleCode}/>
-        </div>
-    ));
+    const examples = componentDoc.examples.map((example, index) => {
+        const framed = example.isFramed ? <Iframe src={`/docs/${name}/examples/${example.uid}`} /> : example.code;
+        const responsive = example.isResponsive ? <Resizable invisible={example.isFramed}>{framed}</Resizable> : framed;
+        return (
+            <div key={index}>
+                <Text h3 css={{my: '$xs'}}>{example.name}</Text>
+                {example.description && <Text>{example.description}</Text>}
+                {responsive}
+                <Code language="tsx" code={example.exampleCode}/>
+            </div>
+        )
+    });
 
     const apis = componentDoc?.apis.map((api, index) => (
         <div key={index}>
             <Text h3 css={{ my: '$xs' }}>{api.name}</Text>
             {api.description && <Text>{api.description}</Text>}
-            <Table hoverable>
+            <Table css={{width: '100%'}} hoverable>
                 <TableHeader>
                     <TableRow>
                         <TableColumn>Attribute</TableColumn>

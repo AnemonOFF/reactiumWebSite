@@ -21,10 +21,16 @@ const StyledWrapper = styled('div', {
 
 const StyledPre = styled('pre', {
     background: '$grayDark200 !important',
+    maxHeight: 485,
     borderRadius: '$xl !important',
     m: '0 !important',
     py: '$sm !important',
     px: 'calc($sm + 37px) !important',
+    scrollbarWidth: 'none',
+    msOverflowStyle: 'none',
+    '&::-webkit-scrollbar': {
+        display: 'none'
+    },
 })
 
 const StyledCopy = styled('button', {

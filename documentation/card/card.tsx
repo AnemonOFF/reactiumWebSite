@@ -1,6 +1,6 @@
-import { Card, Container, Text } from '../reactiumui';
-import { apiRows } from './common';
-import { DocData } from './types';
+import { Card, Container, Text } from '../../reactiumui';
+import { apiRows } from '../common';
+import { DocData } from '../types';
 
 const CardDoc: DocData = {
     name: 'Card',
@@ -28,6 +28,7 @@ const CardDoc: DocData = {
     examples: [
         {
             name: 'Default',
+            uid: 'default',
             description: 'By default card will fill full width of its parent element',
             isResponsive: false,
             code: (
@@ -41,6 +42,7 @@ const CardDoc: DocData = {
         },
         {
             name: 'Types',
+            uid: 'types',
             isResponsive: false,
             code: (
                 <Container>
@@ -55,6 +57,7 @@ const CardDoc: DocData = {
         },
         {
             name: 'Bordered',
+            uid: 'bordered',
             isResponsive: false,
             description: 'Card can be with it`s own border',
             code: (
@@ -68,6 +71,7 @@ const CardDoc: DocData = {
         },
         {
             name: 'Background',
+            uid: 'background',
             isResponsive: false,
             description: 'You can set card background color that you want',
             code: (
@@ -91,6 +95,7 @@ const CardDoc: DocData = {
         },
         {
             name: 'Square',
+            uid: 'square',
             isResponsive: false,
             code: (
                 <Container>
@@ -108,6 +113,7 @@ const CardDoc: DocData = {
         },
         {
             name: 'Pressable',
+            uid: 'pressable',
             isResponsive: false,
             code: (
                 <Card css={{p: 10}} isPressable>

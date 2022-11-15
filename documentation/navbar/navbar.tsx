@@ -1,5 +1,6 @@
-import { apiRows } from "./common";
-import { DocData } from "./types";
+import { Navbar, NavbarContent, NavbarItem, NavbarLink, Text } from "../../reactiumui";
+import { apiRows } from "../common";
+import { DocData } from "../types";
 
 const NavbarDoc: DocData = {
     name: 'Navbar',
@@ -131,7 +132,42 @@ const NavbarDoc: DocData = {
         },
     ],
     examples: [
-        
+        {
+            name: 'Default',
+            uid: 'default',
+            isFramed: true,
+            isResponsive: true,
+            code: (
+                <div style={{height: '300vh'}}>
+                    <Navbar>
+                        <NavbarContent>
+                            <NavbarItem><Text gradient={['$primary', '$success']}>Lorem.</Text></NavbarItem>
+                        </NavbarContent>
+                        <NavbarContent hideOnmedia='xs'>
+                            <NavbarLink active>Home</NavbarLink>
+                            <NavbarLink>Store</NavbarLink>
+                            <NavbarLink>About</NavbarLink>
+                        </NavbarContent>
+                        <NavbarContent>
+                            <NavbarLink>Login</NavbarLink>
+                            <NavbarLink><Text color="primary">Sign Up</Text></NavbarLink>
+                        </NavbarContent>
+                    </Navbar>
+                </div>
+            ),
+            exampleCode: `<div style={{height: '300vh'}}>
+    <Navbar>
+        <NavbarContent>
+            <NavbarItem><Text gradient={['$primary', '$success']}>SuperCorp.</Text></NavbarItem>
+        </NavbarContent>
+        <NavbarContent>
+            <NavbarItem>home</NavbarItem>
+            <NavbarItem>store</NavbarItem>
+            <NavbarItem>about</NavbarItem>
+        </NavbarContent>
+    </Navbar>
+</div>`
+        }
     ]
 }
 
