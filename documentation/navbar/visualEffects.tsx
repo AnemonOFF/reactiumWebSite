@@ -11,11 +11,11 @@ const StyledFooter = styled('div', {
     borderBottom: 'none',
     borderTopLeftRadius: '$xs',
     borderTopRightRadius: '$xs',
+    shadow: '$md',
 })
 
 const StyledWrapper = styled('div', {
     p: '$md',
-    shadow: '$md',
     '& label': {
         m: 10
     },
