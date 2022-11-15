@@ -11,6 +11,7 @@ const ThemingPage: NextPage = () => {
             </Head>
             <DocsLayout>
                 <Text h1>Theming</Text>
+                <Text i>This chapter is not yet written.</Text>
             </DocsLayout>
         </>
     );

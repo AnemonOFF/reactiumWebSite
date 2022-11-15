@@ -11,6 +11,7 @@ const DocsPage: NextPage = () => {
             </Head>
             <DocsLayout>
                 <Text h1>Getting started</Text>
+                <Text i>This chapter is not yet written.</Text>
             </DocsLayout>
         </>
     );
