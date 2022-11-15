@@ -1,9 +1,12 @@
-import { Text } from "../../reactiumui";
+import { Container, Text } from "../../reactiumui";
 
 const ExampleQuote: React.FunctionComponent = () => {
 
     return (
-        <Text blockquote>Lorem ipsum dolor sit amet, consectetur adipiscing elit</Text>
+        <Container>
+            <Text blockquote>Lorem ipsum dolor sit amet, consectetur adipiscing elit</Text>
+            <Text blockquote='clear' css={{mt: '$xs'}}>Lorem ipsum dolor sit amet, consectetur adipiscing elit</Text>
+        </Container>
     )
 }
 

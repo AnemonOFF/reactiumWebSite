@@ -89,8 +89,7 @@ const Code: React.FunctionComponent<CodeProps> = ({ code, language, fit = false 
         if ( !curOverflow || curOverflow === "visible" )
            el.style.overflow = "hidden";
         
-        var isOverflowing = el.clientWidth < el.scrollWidth 
-           || el.clientHeight < el.scrollHeight;
+        var isOverflowing = el.clientHeight < el.scrollHeight;
         
         el.style.overflow = curOverflow;
         setIsOverflowed(isOverflowing);

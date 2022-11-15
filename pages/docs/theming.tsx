@@ -3,17 +3,17 @@ import Head from "next/head";
 import DocsLayout from "../../components/layout/docsLayout";
 import { Text } from "../../reactiumui";
 
-const DocsPage: NextPage = () => {
+const ThemingPage: NextPage = () => {
     return (
         <>
             <Head>
-                <title>Docs - ReactiumUI library for React</title>
+                <title>Theming - ReactiumUI library for React</title>
             </Head>
             <DocsLayout>
-                <Text h1>Getting started</Text>
+                <Text h1>Theming</Text>
             </DocsLayout>
         </>
     );
 }
 
-export default DocsPage;
+export default ThemingPage;

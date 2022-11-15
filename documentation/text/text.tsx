@@ -47,7 +47,7 @@ const TextDoc: DocData = {
         {
             name: 'Quote',
             uid: 'quote',
-            description: 'To make quote just set \'blockquote\' tag',
+            description: 'To make quote just set \'blockquote\' tag. To remove quote symbols, set \'blockquote\' tag to \'clear\'',
             code: <ExampleQuote />,
             codeFilePath: 'documentation/text/quote.tsx'
         },
