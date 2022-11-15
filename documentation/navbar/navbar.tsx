@@ -1,6 +1,12 @@
 import { apiRows } from "../common";
 import { DocData } from "../types";
-import ExampleDefault from "./default";
+import ExampleVisualEffects from "./visualEffects";
+import ExampleCompactOnScroll from "./compactOnScroll";
+import ExampleHideOnScroll from "./hideOnScroll";
+import ExampleTypes from "./types";
+import ExampleCollapse from "./collapse";
+import ExampleFullScreenCollapse from "./fullScreenCollapse";
+import ExampleActiveLinkTypes from "./activeLinkTypes";
 
 const NavbarDoc: DocData = {
     name: 'Navbar',
@@ -108,10 +114,9 @@ const NavbarDoc: DocData = {
                 { attribute: 'navbarItemProps', isRequired: false, type: ['NavbarItemProps'], default: undefined, version: '1.0.0', description: 'NavbarItem props' },
                 { attribute: 'backgroundRadius', isRequired: false, type: ['Radii', 'string', 'number'], default: undefined, version: '1.0.0', description: 'Background border radius of link when type prop is background and active state is true' },
                 { attribute: 'backgroundPadding', isRequired: false, type: ['Space', 'string', 'number'], default: undefined, version: '1.0.0', description: 'Background padding of link when type prop is background and active state is true' },
-                { attribute: 'backgroundColor', isRequired: false, type: ['ThemedColors', 'string'], default: undefined, version: '1.0.0', description: 'Background color of link when type prop is background and active state is true' },
-                { attribute: 'backgroundActiveColor', isRequired: false, type: ['ThemedColors', 'string'], default: undefined, version: '1.0.0', description: 'Color of link when type prop is background and active state is true' },
+                { attribute: 'backgroundActiveColor', isRequired: false, type: ['ThemedColors', 'string'], default: undefined, version: '1.0.0', description: 'Color of text when type prop is background and active state is true' },
                 { attribute: 'underlineWidth', isRequired: false, type: ['string', 'number'], default: undefined, version: '1.0.0', description: 'Width of underline when type prop is underline and active state is true' },
-                { attribute: 'activeColor', isRequired: false, type: ['ThemedColors', 'string'], default: undefined, version: '1.0.0', description: 'Color of link when type prop is color and active state is true' },
+                { attribute: 'activeColor', isRequired: false, type: ['ThemedColors', 'string'], default: undefined, version: '1.0.0', description: 'Color of link when active state is true' },
                 { attribute: 'href', isRequired: false, type: ['string'], default: undefined, version: '1.0.0', description: 'Anchor href prop' },
                 { attribute: 'target', isRequired: false, type: ['HTMLTarget'], default: undefined, version: '1.0.0', description: 'Anchor target prop' },
                 apiRows['css'],
@@ -133,13 +138,61 @@ const NavbarDoc: DocData = {
     ],
     examples: [
         {
-            name: 'Default',
-            uid: 'default',
+            name: 'Types',
+            uid: 'types',
             isFramed: true,
             isResponsive: true,
-            code: <ExampleDefault />,
-            codeFilePath: 'documentation/navbar/default.tsx'
-        }
+            code: <ExampleTypes />,
+            codeFilePath: 'documentation/navbar/types.tsx'
+        },
+        {
+            name: 'Visual effects',
+            uid: 'visualeffects',
+            isFramed: true,
+            isResponsive: true,
+            code: <ExampleVisualEffects />,
+            codeFilePath: 'documentation/navbar/visualeffects.tsx'
+        },
+        {
+            name: 'Active link types',
+            description: 'For more customization of active link, check API NavbarLink props',
+            uid: 'activelinktypes',
+            isFramed: true,
+            isResponsive: true,
+            code: <ExampleActiveLinkTypes />,
+            codeFilePath: 'documentation/navbar/activeLinkTypes.tsx'
+        },
+        {
+            name: 'Compact on scroll',
+            uid: 'compactonscroll',
+            isFramed: true,
+            code: <ExampleCompactOnScroll />,
+            codeFilePath: 'documentation/navbar/compactOnScroll.tsx'
+        },
+        {
+            name: 'Hide on scroll',
+            uid: 'hideonscroll',
+            isFramed: true,
+            code: <ExampleHideOnScroll />,
+            codeFilePath: 'documentation/navbar/hideOnScroll.tsx'
+        },
+        {
+            name: 'Collapse',
+            description: 'If you want to show toggle only for mobile devices, use showOnMedia tag',
+            uid: 'collapse',
+            isFramed: true,
+            isResponsive: true,
+            code: <ExampleCollapse />,
+            codeFilePath: 'documentation/navbar/collapse.tsx'
+        },
+        {
+            name: 'Fullscreen collapse',
+            uid: 'fullscreencollapse',
+            isFramed: true,
+            isResponsive: true,
+            code: <ExampleFullScreenCollapse />,
+            codeFilePath: 'documentation/navbar/fullScreenCollapse.tsx'
+        },
     ]
 }
 
