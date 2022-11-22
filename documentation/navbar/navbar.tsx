@@ -7,6 +7,7 @@ import ExampleTypes from "./types";
 import ExampleCollapse from "./collapse";
 import ExampleFullScreenCollapse from "./fullScreenCollapse";
 import ExampleActiveLinkTypes from "./activeLinkTypes";
+import ExampleCollapseAutoFill from "./collapseAutoFill";
 
 const NavbarDoc: DocData = {
     name: 'Navbar',
@@ -184,6 +185,15 @@ const NavbarDoc: DocData = {
             isResponsive: true,
             code: <ExampleCollapse />,
             codeFilePath: 'documentation/navbar/collapse.tsx'
+        },
+        {
+            name: 'Collapse auto fill',
+            description: 'If you not provide NavbarCollapse, it`s will be generate automatically',
+            uid: 'collapseautofill',
+            isFramed: true,
+            isResponsive: true,
+            code: <ExampleCollapseAutoFill />,
+            codeFilePath: 'documentation/navbar/collapseautofill.tsx'
         },
         {
             name: 'Fullscreen collapse',

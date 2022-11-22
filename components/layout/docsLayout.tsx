@@ -1,7 +1,7 @@
 import Link from "next/link";
 import React, { useMemo } from "react";
 import { GetComponentsNames } from "../../documentation";
-import { Container, Grid, GridItem, List, Navbar, NavbarCollapse, NavbarContent, NavbarItem, NavbarLink, NavbarToggle, Text, useReactiumTheme } from "../../reactiumui";
+import { Container, Grid, GridItem, List, Navbar, NavbarCollapse, NavbarContent, NavbarItem, NavbarLink, NavbarToggle, Text } from "../../reactiumui";
 import ThemeToggle from "../themeToggle";
 import NavCollapseLink from "./navCollapseLink";
 import NavListLink from "./navListLink";
@@ -11,7 +11,6 @@ interface Props {
 }
 
 const DocsLayout: React.FunctionComponent<Props> = ({ children }) => {
-    const { name, setTheme } = useReactiumTheme();
     const components = useMemo(() => GetComponentsNames(), []);
 
     return (
@@ -31,7 +30,6 @@ const DocsLayout: React.FunctionComponent<Props> = ({ children }) => {
                 </NavbarContent>
                 <NavbarContent>
                     <NavbarItem>
-                        {/* <button onClick={() => { setTheme(name === 'light' ? 'dark' : 'light') }}>{name}</button> */}
                         <ThemeToggle />
                     </NavbarItem>
                 </NavbarContent>
