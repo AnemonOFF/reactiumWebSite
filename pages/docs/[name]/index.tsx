@@ -11,7 +11,6 @@ import Prism from "prismjs";
 import "prismjs/themes/prism-okaidia.min.css";
 import "prismjs/plugins/line-numbers/prism-line-numbers.min.css";
 import Iframe from "../../../components/iframe";
-import { readFile } from "fs/promises";
 import { readFileSync } from "fs";
 require("prismjs/components/prism-jsx.min.js");
 require("prismjs/components/prism-tsx.min.js");
@@ -65,13 +64,11 @@ const ComponentDocPage: NextPage<{name: string, codes: {[uid: string]: string}}>
             {api.description && <Text>{api.description}</Text>}
             <Table css={{width: '100%'}} hoverable>
                 <TableHeader>
-                    <TableRow>
-                        <TableColumn>Attribute</TableColumn>
-                        <TableColumn>Type</TableColumn>
-                        <TableColumn>Default</TableColumn>
-                        <TableColumn>Description</TableColumn>
-                        <TableColumn>Version</TableColumn>
-                    </TableRow>
+                    <TableColumn>Attribute</TableColumn>
+                    <TableColumn>Type</TableColumn>
+                    <TableColumn>Default</TableColumn>
+                    <TableColumn>Description</TableColumn>
+                    <TableColumn>Version</TableColumn>
                 </TableHeader>
                 <TableBody>
                     {api.rows.map((row, index) => (

@@ -5,11 +5,9 @@ const ExampleCloudZebra: React.FunctionComponent = () => {
     return (
         <Table cloud zebra>
             <TableHeader>
-                <TableRow>
-                    <TableColumn>Id</TableColumn>
-                    <TableColumn>Name</TableColumn>
-                    <TableColumn>Gender</TableColumn>
-                </TableRow>
+                <TableColumn>Id</TableColumn>
+                <TableColumn>Name</TableColumn>
+                <TableColumn>Gender</TableColumn>
             </TableHeader>
             <TableBody>
                 <TableRow>

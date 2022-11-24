@@ -27,11 +27,15 @@ const StyledPre = styled('pre', {
     borderRadius: 'unset !important',
     m: '0 !important',
     py: '$sm !important',
-    px: 'calc($sm + 37px) !important',
+    px: 'calc($sm + 35px) !important',
     scrollbarWidth: 'none',
     msOverflowStyle: 'none',
     '&::-webkit-scrollbar': {
         display: 'none'
+    },
+    '&, & *': {
+        fontSize: '$sm !important',
+        fontFamily: 'source-code-pro,Menlo,Monaco,Consolas,Courier New,monospace !important',
     },
     variants: {
         full: {
@@ -44,13 +48,13 @@ const StyledPre = styled('pre', {
 
 const StyledCopy = styled('button', {
     position: 'absolute',
-    right: 15,
-    top: 15,
+    right: 13,
+    top: 13,
     background: 'transparent',
     border: 'none',
     p: 0,
     m: 0,
-    size: 22,
+    size: 20,
     cursor: 'pointer',
     '&:hover path': {
         opacity: 0.8

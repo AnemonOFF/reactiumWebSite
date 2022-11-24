@@ -18,12 +18,10 @@ const ExampleStyleVariants: React.FunctionComponent = () => {
                     <Text css={{textAlign: 'center', width: '100%'}}>{t}</Text>
                     <Table type={t as 'default' | 'square' | 'circle'}>
                         <TableHeader>
-                            <TableRow>
-                                <TableColumn>Id</TableColumn>
-                                <TableColumn>Name</TableColumn>
-                                <TableColumn>Age</TableColumn>
-                                <TableColumn>Gender</TableColumn>
-                            </TableRow>
+                            <TableColumn>Id</TableColumn>
+                            <TableColumn>Name</TableColumn>
+                            <TableColumn>Age</TableColumn>
+                            <TableColumn>Gender</TableColumn>
                         </TableHeader>
                         <TableBody>
                             {data.map((v, i) => (

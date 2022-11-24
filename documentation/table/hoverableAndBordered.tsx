@@ -5,11 +5,9 @@ const ExampleHoverableAndBordered: React.FunctionComponent = () => {
     return (
         <Table bordered hoverable>
             <TableHeader>
-                <TableRow>
-                    <TableColumn>Id</TableColumn>
-                    <TableColumn>Name</TableColumn>
-                    <TableColumn>Gender</TableColumn>
-                </TableRow>
+                <TableColumn>Id</TableColumn>
+                <TableColumn>Name</TableColumn>
+                <TableColumn>Gender</TableColumn>
             </TableHeader>
             <TableBody>
                 <TableRow>
