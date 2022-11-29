@@ -7,7 +7,7 @@ const StyledResizer = styled('div', {
     top: 'calc(50% - 20px)',
     width: 6,
     height: 40,
-    cursor: 'w-resize',
+    cursor: 'ew-resize',
     '&::before': {
         content: '',
         position: 'absolute',

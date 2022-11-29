@@ -81,23 +81,27 @@ const StyledMoreButton = styled('button', {
 })
 
 const Code: React.FunctionComponent<CodeProps> = ({ code, language, fit = false }) => {
-    const [isOverflowed, setIsOverflowed] = useState<boolean>();
+    const [isOverflowed, setIsOverflowed] = useState<boolean>(() => code.split("\n").length > 22);
     const [isFull, setIsFull] = useState<boolean>(false);
     const preRef = useRef<HTMLPreElement>(null);
 
     useEffect(() => {
-        if(!preRef.current)
-            return;
-        const el = preRef.current;
-        var curOverflow = el.style.overflow;
-        if ( !curOverflow || curOverflow === "visible" )
-           el.style.overflow = "hidden";
+        setIsOverflowed(code.split("\n").length > 22);
+    }, [code])
+
+    // useEffect(() => {
+    //     if(!preRef.current)
+    //         return;
+    //     const el = preRef.current;
+    //     var curOverflow = el.style.overflow;
+    //     if ( !curOverflow || curOverflow === "visible" )
+    //        el.style.overflow = "hidden";
         
-        var isOverflowing = el.clientHeight < el.scrollHeight;
+    //     var isOverflowing = el.clientHeight < el.scrollHeight;
         
-        el.style.overflow = curOverflow;
-        setIsOverflowed(isOverflowing);
-    }, [setIsOverflowed, code, fit])
+    //     el.style.overflow = curOverflow;
+    //     setIsOverflowed(isOverflowing);
+    // }, [setIsOverflowed, code, fit])
 
     const copy = () => {
         navigator.clipboard.writeText(code);

@@ -1,7 +1,7 @@
 import Link from "next/link";
 import React, { useMemo } from "react";
 import { GetComponentsNames } from "../../documentation";
-import { Container, Grid, GridItem, List, Navbar, NavbarCollapse, NavbarContent, NavbarItem, NavbarLink, NavbarToggle, Text } from "../../reactiumui";
+import { Container, Grid, GridItem, GridRow, List, Navbar, NavbarCollapse, NavbarContent, NavbarItem, NavbarLink, NavbarToggle, Text } from "../../reactiumui";
 import ThemeToggle from "../themeToggle";
 import NavCollapseLink from "./navCollapseLink";
 import NavListLink from "./navListLink";
@@ -41,19 +41,21 @@ const DocsLayout: React.FunctionComponent<Props> = ({ children }) => {
             </Navbar>
             <Container all lg={'$breakpoints$lg'} fixed center css={{mt: '$xl'}}>
                 <Grid columns={6} gap={15}>
-                    <GridItem all={250} fixed hideOnmedia={'sm'}>
-                        <Container position='fixed' preventOverScreen hideScroll>
-                            <Text h2>Documentation</Text>
-                            <List listStyleType="disc" gap='$xs' css={{mt: '$xs'}}>
-                                <NavListLink href='/docs'>Getting started</NavListLink>
-                                <NavListLink href='/docs/theming'>Theming</NavListLink>
-                                {components.map((name, i) => <NavListLink key={i} href={`/docs/${name.toLowerCase()}`}>{name}</NavListLink>)}
-                            </List>
-                        </Container>
-                    </GridItem>
-                    <GridItem display="flex" direction="column">
-                        {children}
-                    </GridItem>
+                    <GridRow>
+                        <GridItem all={250} fixed hideOnmedia={'sm'}>
+                            <Container position='fixed' preventOverScreen hideScroll>
+                                <Text h2>Documentation</Text>
+                                <List listStyleType="disc" gap='$xs' css={{mt: '$xs'}}>
+                                    <NavListLink href='/docs'>Getting started</NavListLink>
+                                    <NavListLink href='/docs/theming'>Theming</NavListLink>
+                                    {components.map((name, i) => <NavListLink key={i} href={`/docs/${name.toLowerCase()}`}>{name}</NavListLink>)}
+                                </List>
+                            </Container>
+                        </GridItem>
+                        <GridItem css={{display: 'flex', flexDirection: 'column'}}>
+                            {children}
+                        </GridItem>
+                    </GridRow>
                 </Grid>
             </Container>
         </>
