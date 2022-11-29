@@ -36,7 +36,7 @@ const StyledResizable = styled('div', {
     minWidth: 'min-content',
     border: '1px solid $grayDark200',
     borderRightWidth: '12px',
-    borderRadius: '$xl',
+    borderRadius: '$md',
     zIndex: '$1',
     variants: {
         invisible: {

@@ -11,7 +11,7 @@ const StyledWrapper = styled('div', {
     position: 'relative',
     my: '$xs',
     background: '$grayDark200',
-    borderRadius: '$xl',
+    borderRadius: '$md',
     variants: {
         fit: {
             true: {
