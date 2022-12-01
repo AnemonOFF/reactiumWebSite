@@ -62,7 +62,7 @@ const ComponentDocPage: NextPage<{name: string, codes: {[uid: string]: string}}>
         <div key={index}>
             <Text h3 css={{ my: '$xs' }}>{api.name}</Text>
             {api.description && <Text>{api.description}</Text>}
-            <Table wrapperCss={{width: '100%'}} hoverable>
+            <Table fullWidth hoverable>
                 <TableHeader>
                     <TableColumn>Attribute</TableColumn>
                     <TableColumn>Type</TableColumn>

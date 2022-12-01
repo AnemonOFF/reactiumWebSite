@@ -3,6 +3,7 @@ import { DocData } from "../types";
 import ExampleDynamicPagination from "./dynamicPagination";
 import ExampleInfinityScroll from "./infinityScroll";
 import ExamplePagination from "./pagination";
+import ExampleResizableColumns from "./resizableColumns";
 import ExampleSelect from "./select";
 import ExampleSort from "./sort";
 import ExampleStyleVariants from "./styleVariants";
@@ -139,6 +140,12 @@ const TableDoc: DocData = {
             uid: 'select',
             code: <ExampleSelect />,
             codeFilePath: 'documentation/table/select.tsx'
+        },
+        {
+            name: 'Resizable columns',
+            uid: 'resizablecolumns',
+            code: <ExampleResizableColumns />,
+            codeFilePath: 'documentation/table/resizableColumns.tsx'
         },
         {
             name: 'Pagination',
