@@ -1,6 +1,6 @@
-import { Table, TableBody, TableCell, TableColumn, TableFooter, TableHeader, TablePagination, TableRow } from "../../reactiumui";
+import { Table, TableBody, TableCell, TableColumn, TableHeader, TableRow } from "../../reactiumui";
 
-const ExampleDynamicPagination: React.FunctionComponent = () => {
+const ExampleInfinityScroll: React.FunctionComponent = () => {
     const loadMore = async (rowsPerPage: number, page: number) => {
         const data = await fetch(`https://jsonplaceholder.typicode.com/users?_limit=${rowsPerPage}&_page=${page}`)
             .then(d => d.json());
@@ -19,7 +19,7 @@ const ExampleDynamicPagination: React.FunctionComponent = () => {
     }
 
     return (
-        <Table rowsPerPage={4} onLoadMore={loadMore}>
+        <Table rowsPerPage={2} infinityScrollHeight={200} onLoadMore={loadMore}>
             <TableHeader>
                 <TableColumn>Id</TableColumn>
                 <TableColumn>Name</TableColumn>
@@ -29,11 +29,8 @@ const ExampleDynamicPagination: React.FunctionComponent = () => {
             </TableHeader>
             <TableBody>
             </TableBody>
-            <TableFooter>
-                <TablePagination />
-            </TableFooter>
         </Table>
     )
 }
 
-export default ExampleDynamicPagination;
+export default ExampleInfinityScroll;

@@ -1,6 +1,7 @@
 import { apiRows } from "../common";
 import { DocData } from "../types";
 import ExampleDynamicPagination from "./dynamicPagination";
+import ExampleInfinityScroll from "./infinityScroll";
 import ExamplePagination from "./pagination";
 import ExampleSelect from "./select";
 import ExampleSort from "./sort";
@@ -36,6 +37,10 @@ const TableDoc: DocData = {
                 { attribute: 'rowsPerPage', isRequired: false, type: ['number'], default: undefined, version: '1.0.0', description: 'Count of rows on page' },
                 { attribute: 'totalRows', isRequired: false, type: ['boolean'], default: 'false', version: '1.0.0', description: 'Total rows count. Required when onLoadMore is undefined' },
                 { attribute: 'onLoadMore', isRequired: false, type: ['OnLoadMoreEvent'], default: undefined, version: '1.0.0', description: 'On load more rows event. Should return ReactNode with rowsPerPage TableRows and totalRows count' },
+                { attribute: 'page', isRequired: false, type: ['number'], default: undefined, version: '1.0.0', description: 'Set current page (controlled element)' },
+                { attribute: 'onPageChange', isRequired: false, type: ['(page: number) => void'], default: undefined, version: '1.0.0', description: 'On page changing event' },
+                { attribute: 'initialPage', isRequired: false, type: ['number'], default: '1', version: '1.0.0', description: 'Initial page' },
+                { attribute: 'infinityScrollHeight', isRequired: false, type: ['number'], default: undefined, version: '1.0.0', description: 'Enable infinity scroll pagination mode and setting max wrapper height and overflow.' },
                 apiRows['hideOnMedia'],
                 apiRows['showOnMedia'],
                 apiRows['hideScroll'],
@@ -146,6 +151,12 @@ const TableDoc: DocData = {
             uid: 'dynamicpagination',
             code: <ExampleDynamicPagination />,
             codeFilePath: 'documentation/table/dynamicPagination.tsx'
+        },
+        {
+            name: 'Infinity scroll',
+            uid: 'infinityscroll',
+            code: <ExampleInfinityScroll />,
+            codeFilePath: 'documentation/table/infinityScroll.tsx'
         },
     ]
 }
