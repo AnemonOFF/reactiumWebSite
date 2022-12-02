@@ -1,4 +1,3 @@
-import { Container, Text } from "../../reactiumui";
 import { apiRows } from "../common";
 import { DocData } from "../types";
 import ExampleColorsAndGradient from "./colorsAndGradient";

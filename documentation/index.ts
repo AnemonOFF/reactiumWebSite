@@ -1,5 +1,6 @@
 import card from './card';
 import container from './container';
+import drawer from './drawer';
 import grid from './grid';
 import list from './list';
 import navbar from './navbar';
@@ -14,6 +15,7 @@ const components = [
     navbar,
     table,
     text,
+    drawer,
 ]
 
 export const GetComponentsNames = () => components.map(c => c.name);
