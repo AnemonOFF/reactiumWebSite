@@ -6,8 +6,8 @@ const ExampleDefault: React.FunctionComponent = () => {
 
     return (
         <button onClick={() => setIsOpen(old => !old)}>
-            {isOpen ? "Close" : "Open"}
-            <Drawer isOpen={isOpen} css={{p: '$md'}}>
+            Open
+            <Drawer isOpen={isOpen} onWrapperClick={() => setIsOpen(false)} css={{p: '$md'}}>
                 <Text h2>Hello world!</Text>
             </Drawer>
         </button>
