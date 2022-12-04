@@ -1,3 +1,4 @@
+import button from './button';
 import card from './card';
 import container from './container';
 import drawer from './drawer';
@@ -16,6 +17,7 @@ const components = [
     table,
     text,
     drawer,
+    button,
 ]
 
 export const GetComponentsNames = () => components.map(c => c.name);

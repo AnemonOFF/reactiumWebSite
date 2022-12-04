@@ -1,17 +1,40 @@
 import Link from "next/link";
 import React, { useMemo } from "react";
 import { GetComponentsNames } from "../../documentation";
-import { CSS, Container, Grid, GridItem, GridRow, Navbar, NavbarCollapse, NavbarContent, NavbarItem, NavbarLink, NavbarToggle, Text } from "../../reactiumui";
+import { DocData } from "../../documentation/types";
+import { CSS, Container, Grid, GridItem, GridRow, Navbar, NavbarCollapse, NavbarContent, NavbarItem, NavbarLink, NavbarToggle, Text, List, ListItem, styled } from "../../reactiumui";
 import ThemeToggle from "../themeToggle";
 import NavCollapseLink from "./navCollapseLink";
 import Sidebar from "./sidebar";
 
+const StyledInternalLink = styled('a', {
+    textDecoration: 'none',
+    color: '$foreground',
+    cursor: 'pointer',
+})
+
 interface Props {
+    componentDoc?: DocData,
     children?: React.ReactNode
 }
 
-const DocsLayout: React.FunctionComponent<Props> = ({ children }) => {
+const DocsLayout: React.FunctionComponent<Props> = ({ children, componentDoc }) => {
     const components = useMemo(() => GetComponentsNames(), []);
+
+    const links = useMemo(() => {
+        if(!componentDoc)
+            return [];
+        let result = [
+            {id: 'import', name: 'Import'},
+            {id: 'examples', name: 'Examples'},
+        ];
+        if(componentDoc.useCases)
+            result.splice(1, 0, {id: 'usecases', name: 'Use cases'});
+        result = result.concat(componentDoc.examples.map(doc => ({id: `example-${doc.uid}`, name: doc.name})))
+        result.push({id: 'api', name: 'API'});
+        result = result.concat(componentDoc.apis.map(doc => ({id: `api-${doc.name.replace(' ', '-')}`, name: doc.name})));
+        return result;
+    }, [componentDoc])
 
     const navbarCss: CSS = {
         position: 'fixed',
@@ -60,8 +83,19 @@ const DocsLayout: React.FunctionComponent<Props> = ({ children }) => {
                     </Container>
                 </GridItem>
                 <GridItem fixed all={250} hideOnmedia={'md'}>
-                    <Container position='fixed' preventOverScreen hideScroll>
+                    <Container position='fixed' preventOverScreen hideScroll css={{mt: 73}}>
                         <Text h4>On this page</Text>
+                        <List listStylePosition={"inside"} gap={5} css={{ml: '$md', mt: '$xs'}}>
+                            {links.map(l => (
+                                <ListItem key={l.id}>
+                                    <Link href={`#${l.id}`}>
+                                        <StyledInternalLink>
+                                            {l.name}
+                                        </StyledInternalLink>
+                                    </Link>
+                                </ListItem>
+                            ))}
+                        </List>
                     </Container>
                 </GridItem>
             </GridRow>

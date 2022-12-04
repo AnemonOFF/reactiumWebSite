@@ -5,13 +5,14 @@ import Code from "../../../components/code";
 import DocsLayout from "../../../components/layout/docsLayout";
 import Resizable from "../../../components/resizable";
 import { GetComponentDoc } from "../../../documentation";
-import { List, ListItem, Table, TableBody, TableCell, TableColumn, TableHeader, TableRow, Text } from "../../../reactiumui";
+import { List, ListItem, styled, Table, TableBody, TableCell, TableColumn, TableHeader, TableRow, Text } from "../../../reactiumui";
 import { useEffect } from "react";
 import Prism from "prismjs";
 import "prismjs/themes/prism-okaidia.min.css";
 import "prismjs/plugins/line-numbers/prism-line-numbers.min.css";
 import Iframe from "../../../components/iframe";
 import { readFileSync } from "fs";
+import Linker from "../../../components/linker";
 require("prismjs/components/prism-jsx.min.js");
 require("prismjs/components/prism-tsx.min.js");
 require("prismjs/plugins/line-numbers/prism-line-numbers.min.js");
@@ -50,7 +51,9 @@ const ComponentDocPage: NextPage<{name: string, codes: {[uid: string]: string}}>
         const responsive = example.isResponsive ? <Resizable invisible={example.isFramed}>{framed}</Resizable> : framed;
         return (
             <div key={index}>
-                <Text h3 css={{my: '$xs'}}>{example.name}</Text>
+                <Linker key={index} id={`example-${example.uid}`}>
+                    <Text h3 css={{my: '$xs'}}>{example.name}</Text>
+                </Linker>
                 {example.description && <Text>{example.description}</Text>}
                 {responsive}
                 <Code language="tsx" code={codes[example.uid]}/>
@@ -60,7 +63,9 @@ const ComponentDocPage: NextPage<{name: string, codes: {[uid: string]: string}}>
 
     const apis = componentDoc?.apis.map((api, index) => (
         <div key={index}>
-            <Text h3 css={{ my: '$xs' }}>{api.name}</Text>
+            <Linker key={index} id={`api-${api.name.replace(' ', '-')}`}>
+                <Text h3 css={{ my: '$xs' }}>{api.name}</Text>
+            </Linker>
             {api.description && <Text>{api.description}</Text>}
             <Table fullWidth hoverable>
                 <TableHeader>
@@ -90,24 +95,32 @@ const ComponentDocPage: NextPage<{name: string, codes: {[uid: string]: string}}>
             <Head>
                 <title>{`${componentDoc.name} docs - ReactiumUI library for React`}</title>
             </Head>
-            <DocsLayout>
-                <Text h1>{componentDoc!.name}</Text>
+            <DocsLayout componentDoc={componentDoc}>
+                <Linker id="import">
+                    <Text h1>{componentDoc!.name}</Text>
+                </Linker>
                 <Code language="tsx" code={componentDoc!.import} fit />
                 {componentDoc!.description && <Text fontSize={'$lg'}>{componentDoc!.description}</Text>}
 
                 {componentDoc!.useCases &&
                 <>
-                <Text h2>Use cases</Text>
+                <Linker id="usecases">
+                    <Text h2>Use cases</Text>
+                </Linker>
                 <List gap='$xs' css={{ mt: '$xs' }}>
                     {useCases}
                 </List>
                 </>
                 }
 
-                <Text h2 css={{ mt: '$xl' }}>Examples</Text>
+                <Linker id="examples">
+                    <Text h2 css={{ mt: '$xl' }}>Examples</Text>
+                </Linker>
                 {examples}
 
-                <Text h2 css={{ mt: '$xl' }}>API</Text>
+                <Linker id="api">
+                    <Text h2 css={{ mt: '$xl' }}>API</Text>
+                </Linker>
                 {apis}
             </DocsLayout>
         </>
