@@ -13,6 +13,11 @@ const data = [
 const ExampleSelect: React.FunctionComponent = () => {
     const [selectType, setSelectType] = useState<'single' | 'multiple'>('single');
     const [hideCheckboxes, setHideCheckboxes] = useState<boolean>(false);
+    const [selectedUids, setSelectedUids] = useState<string[]>([]);
+
+    const onSelectChange = (uids: string[]) => {
+        //setSelectedUids(uids);
+    }
 
     return (
         <>
@@ -23,7 +28,7 @@ const ExampleSelect: React.FunctionComponent = () => {
             <label htmlFor="hideCheckboxes">
                 <input type="checkbox" id="hideCheckboxes" checked={hideCheckboxes} onChange={() => setHideCheckboxes(old => !old)} disabled={selectType == 'single'} /> hide checkboxes
             </label>
-            <Table select={selectType} hideCheckboxColumn={hideCheckboxes}>
+            <Table select={selectType} hideCheckboxColumn={hideCheckboxes} onSelectChange={onSelectChange} selectedUids={selectedUids}>
                 <TableHeader>
                     <TableColumn>Id</TableColumn>
                     <TableColumn>Name</TableColumn>

@@ -2,6 +2,7 @@ import { apiRows } from "../common";
 import { DocData } from "../types";
 import ExampleColors from "./colors";
 import ExampleFontAndBorder from "./fontAndBorder";
+import ExampleIcons from "./icons";
 import ExampleRoundness from "./roundness";
 import ExampleSizes from "./sizes";
 import ExampleTypes from "./types";
@@ -18,6 +19,10 @@ const ButtonDoc: DocData = {
                 { attribute: 'roundness', isRequired: false, type: ['default', 'square', 'round'], default: 'default', version: '1.0.0', description: 'Variants of border radius' },
                 { attribute: 'color', isRequired: false, type: ['ThemedColors', 'default', 'string'], default: undefined, version: '1.0.0', description: 'Set button color, depends on type' },
                 { attribute: 'gradient', isRequired: false, type: ['string[]'], default: undefined, version: '1.0.0', description: 'Set color as gradient' },
+                { attribute: 'icon', isRequired: false, type: ['ReactNode'], default: undefined, version: '1.0.0', description: 'Put icon in left side' },
+                { attribute: 'rightIcon', isRequired: false, type: ['ReactNode'], default: undefined, version: '1.0.0', description: 'Put icon in right side' },
+                { attribute: 'iconSize', isRequired: false, type: ['number', 'string'], default: '20px', version: '1.0.0', description: 'Set left icon size (width and height)' },
+                { attribute: 'rightIconSize', isRequired: false, type: ['number', 'string'], default: '20px', version: '1.0.0', description: 'Set right icon size (width and height)' },
                 { attribute: 'size', isRequired: false, type: ['Space', 'number', 'string'], default: 'xs', version: '1.0.0', description: 'Padding inside button' },
                 { attribute: 'fontSize', isRequired: false, type: ['FontSize', 'number', 'string'], default: undefined, version: '1.0.0', description: 'CSS font-size parameter' },
                 { attribute: 'fontWeight', isRequired: false, type: ['FontWeight', 'number'], default: undefined, version: '1.0.0', description: 'CSS font-weight parameter' },
@@ -59,6 +64,12 @@ const ButtonDoc: DocData = {
             uid: 'fontandborder',
             code: <ExampleFontAndBorder />,
             codeFilePath: 'documentation/button/fontAndBorder.tsx'
+        },
+        {
+            name: 'Icons',
+            uid: 'icons',
+            code: <ExampleIcons />,
+            codeFilePath: 'documentation/button/icons.tsx'
         }
     ]
 }

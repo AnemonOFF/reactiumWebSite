@@ -1,6 +1,7 @@
 import { apiRows } from "../common";
 import { DocData } from "../types";
 import ExampleDefault from "./default";
+import ExampleInsideContainer from "./insideContainer";
 import ExamplePlacements from "./placements";
 import ExampleSize from "./size";
 import ExampleStyleVariants from "./styleVariants";
@@ -53,6 +54,12 @@ const TextDoc: DocData = {
             uid: 'size',
             code: <ExampleSize />,
             codeFilePath: 'documentation/drawer/size.tsx'
+        },
+        {
+            name: 'Inside container',
+            uid: 'insideContainer',
+            code: <ExampleInsideContainer />,
+            codeFilePath: 'documentation/drawer/insideContainer.tsx'
         },
     ]
 }

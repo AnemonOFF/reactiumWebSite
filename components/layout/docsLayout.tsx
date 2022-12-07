@@ -55,7 +55,7 @@ const DocsLayout: React.FunctionComponent<Props> = ({ children, componentDoc }) 
                 </GridItem>
                 <GridItem css={{display: 'flex', flexDirection: 'column', paddingTop: 78, px: '$sm', alignItems: 'center'}}>
                     <Container all={1400}>
-                        <Navbar type={'sticky'} wrapperCss={navbarCss} square disableShadow>
+                        <Navbar type={'sticky'} wrapperCss={navbarCss} square disableShadow border>
                             <NavbarContent showOnmedia={'sm'}>
                                 <NavbarItem>
                                     <NavbarToggle />
