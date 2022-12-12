@@ -8,6 +8,7 @@ import navbar from './navbar';
 import table from './table';
 import text from './text';
 import group from './group';
+import checkbox from './checkbox';
 
 const components = [
     card,
@@ -20,6 +21,7 @@ const components = [
     drawer,
     button,
     group,
+    checkbox,
 ]
 
 export const GetComponentsNames = () => components.map(c => c.name);
