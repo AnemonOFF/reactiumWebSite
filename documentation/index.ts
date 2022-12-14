@@ -9,6 +9,7 @@ import table from './table';
 import text from './text';
 import group from './group';
 import checkbox from './checkbox';
+import radio from './radio';
 
 const components = [
     card,
@@ -22,6 +23,7 @@ const components = [
     button,
     group,
     checkbox,
+    radio
 ]
 
 export const GetComponentsNames = () => components.map(c => c.name);

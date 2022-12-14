@@ -9,25 +9,25 @@ import ExampleLabelColors from "./labelColors";
 import ExampleRoundness from "./roundness";
 import ExampleSize from "./size";
 
-const CheckboxDoc: DocData = {
-    name: 'Checkbox',
-    import: 'import {Checkbox} from \'reactiumui\';',
+const RadioDoc: DocData = {
+    name: 'Radio',
+    import: 'import {Radio} from \'reactiumui\';',
     apis: [
         {
-            name: 'Checkbox props',
+            name: 'Radio props',
             rows: [
                 apiRows['children'],
-                { attribute: 'size', isRequired: false, type: ['Space', 'number', 'string'], default: '21px', version: '1.0.0', description: 'Size of checkbox and label' },
-                { attribute: 'color', isRequired: false, type: ['ThemedColors', 'default', 'string'], default: undefined, version: '1.0.0', description: 'Set checkbox color' },
+                { attribute: 'size', isRequired: false, type: ['Space', 'number', 'string'], default: '21px', version: '1.0.0', description: 'Size of radio and label' },
+                { attribute: 'color', isRequired: false, type: ['ThemedColors', 'default', 'string'], default: undefined, version: '1.0.0', description: 'Set radio color' },
                 { attribute: 'gradient', isRequired: false, type: ['string[]'], default: undefined, version: '1.0.0', description: 'Set color as gradient' },
-                { attribute: 'labelColor', isRequired: false, type: ['ThemedColors', 'default', 'string'], default: undefined, version: '1.0.0', description: 'Set color of checkbox`s label' },
+                { attribute: 'labelColor', isRequired: false, type: ['ThemedColors', 'default', 'string'], default: undefined, version: '1.0.0', description: 'Set color of radio`s label' },
                 { attribute: 'labelGradient', isRequired: false, type: ['string[]'], default: undefined, version: '1.0.0', description: 'Set labelColor as gradient' },
-                { attribute: 'icon', isRequired: false, type: ['ReactNode'], default: undefined, version: '1.0.0', description: 'Replace checkbox with icon' },
-                { attribute: 'checkedIcon', isRequired: false, type: ['ReactNode'], default: undefined, version: '1.0.0', description: 'Replace checkbox with icon on checked' },
+                { attribute: 'icon', isRequired: false, type: ['ReactNode'], default: undefined, version: '1.0.0', description: 'Replace radio with icon' },
+                { attribute: 'checkedIcon', isRequired: false, type: ['ReactNode'], default: undefined, version: '1.0.0', description: 'Replace radio with icon on checked' },
                 { attribute: 'disabled', isRequired: false, type: ['boolean'], default: 'false', version: '1.0.0', description: 'Disabled input prop' },
                 { attribute: 'checked', isRequired: false, type: ['boolean'], default: undefined, version: '1.0.0', description: 'Checked input prop (controlled)' },
                 { attribute: 'onChange', isRequired: false, type: ['(e: ChangeEvent<HTMLInputElement>) => void'], default: undefined, version: '1.0.0', description: 'OnChange input prop (controlled)' },
-                { attribute: 'initialChecked', isRequired: false, type: ['boolean'], default: 'false', version: '1.0.0', description: 'Checked input prop on checkbox initial (uncontrolled)' },
+                { attribute: 'initialChecked', isRequired: false, type: ['boolean'], default: 'false', version: '1.0.0', description: 'Checked input prop on radio initial (uncontrolled)' },
                 { attribute: 'indeterminate', isRequired: false, type: ['boolean'], default: 'false', version: '1.0.0', description: 'Indeterminate state (controlled)' },
                 { attribute: 'round', isRequired: false, type: ['boolean'], default: 'false', version: '1.0.0', description: 'Round border radius' },
                 { attribute: 'square', isRequired: false, type: ['boolean'], default: 'false', version: '1.0.0', description: 'Set border radius to zero' },
@@ -44,51 +44,51 @@ const CheckboxDoc: DocData = {
             name: 'Default',
             uid: 'default',
             code: <ExampleDefault />,
-            codeFilePath: 'documentation/checkbox/default.tsx'
+            codeFilePath: 'documentation/radio/default.tsx'
         },
         {
             name: 'Disabled',
             uid: 'disabled',
             code: <ExampleDisabled />,
-            codeFilePath: 'documentation/checkbox/disabled.tsx'
+            codeFilePath: 'documentation/radio/disabled.tsx'
         },
         {
             name: 'Roundness',
             uid: 'roundness',
             code: <ExampleRoundness />,
-            codeFilePath: 'documentation/checkbox/roundness.tsx'
+            codeFilePath: 'documentation/radio/roundness.tsx'
         },
         {
             name: 'Size',
             uid: 'size',
             code: <ExampleSize />,
-            codeFilePath: 'documentation/checkbox/size.tsx'
+            codeFilePath: 'documentation/radio/size.tsx'
         },
         {
             name: 'Colors',
             uid: 'colors',
             code: <ExampleColors />,
-            codeFilePath: 'documentation/checkbox/colors.tsx'
+            codeFilePath: 'documentation/radio/colors.tsx'
         },
         {
             name: 'Label colors',
             uid: 'labelcolors',
             code: <ExampleLabelColors />,
-            codeFilePath: 'documentation/checkbox/labelColors.tsx'
+            codeFilePath: 'documentation/radio/labelColors.tsx'
         },
         {
             name: 'Indeterminate',
             uid: 'indeterminate',
             code: <ExampleIndeterminate />,
-            codeFilePath: 'documentation/checkbox/indeterminate.tsx'
+            codeFilePath: 'documentation/radio/indeterminate.tsx'
         },
         {
             name: 'Icons',
             uid: 'icons',
             code: <ExampleIcons />,
-            codeFilePath: 'documentation/checkbox/icons.tsx'
+            codeFilePath: 'documentation/radio/icons.tsx'
         }
     ]
 }
 
-export default CheckboxDoc;
+export default RadioDoc;
