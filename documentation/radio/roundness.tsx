@@ -4,7 +4,7 @@ const ExampleRoundness: React.FunctionComponent = () => {
     return (
         <>
             <Radio square>Square radio</Radio>
-            <Radio round>Round radio</Radio>
+            <Radio roundness>Round radio</Radio>
         </>
     )
 }

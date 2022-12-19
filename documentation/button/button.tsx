@@ -1,6 +1,7 @@
 import { apiRows } from "../common";
 import { DocData } from "../types";
 import ExampleColors from "./colors";
+import ExampleCompact from "./compact";
 import ExampleFontAndBorder from "./fontAndBorder";
 import ExampleIcons from "./icons";
 import ExampleRoundness from "./roundness";
@@ -24,6 +25,7 @@ const ButtonDoc: DocData = {
                 { attribute: 'iconSize', isRequired: false, type: ['number', 'string'], default: '20px', version: '1.0.0', description: 'Set left icon size (width and height)' },
                 { attribute: 'rightIconSize', isRequired: false, type: ['number', 'string'], default: '20px', version: '1.0.0', description: 'Set right icon size (width and height)' },
                 { attribute: 'size', isRequired: false, type: ['Space', 'number', 'string'], default: 'xs', version: '1.0.0', description: 'Padding inside button' },
+                { attribute: 'compact', isRequired: false, type: ['boolean'], default: 'false', version: '1.0.0', description: 'Make button more compact' },
                 { attribute: 'fontSize', isRequired: false, type: ['FontSize', 'number', 'string'], default: undefined, version: '1.0.0', description: 'CSS font-size parameter' },
                 { attribute: 'fontWeight', isRequired: false, type: ['FontWeight', 'number'], default: undefined, version: '1.0.0', description: 'CSS font-weight parameter' },
                 { attribute: 'borderWidth', isRequired: false, type: ['BorderWidth', 'number', 'string'], default: undefined, version: '1.0.0', description: 'CSS border-width parameter' },
@@ -58,6 +60,12 @@ const ButtonDoc: DocData = {
             uid: 'sizes',
             code: <ExampleSizes />,
             codeFilePath: 'documentation/button/sizes.tsx'
+        },
+        {
+            name: 'Compact',
+            uid: 'compact',
+            code: <ExampleCompact />,
+            codeFilePath: 'documentation/button/compact.tsx'
         },
         {
             name: 'Font and border',

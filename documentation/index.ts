@@ -10,6 +10,7 @@ import text from './text';
 import group from './group';
 import checkbox from './checkbox';
 import radio from './radio';
+import input from './input';
 
 const components = [
     card,
@@ -23,7 +24,8 @@ const components = [
     button,
     group,
     checkbox,
-    radio
+    radio,
+    input,
 ]
 
 export const GetComponentsNames = () => components.map(c => c.name);

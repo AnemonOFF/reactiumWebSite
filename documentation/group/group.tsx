@@ -1,6 +1,7 @@
 import { apiRows } from "../common";
 import { DocData } from "../types";
 import ExampleButtons from "./buttons";
+import ExampleInputs from "./inputs";
 
 const GroupDoc: DocData = {
     name: 'Group',
@@ -22,6 +23,12 @@ const GroupDoc: DocData = {
             uid: 'buttons',
             code: <ExampleButtons />,
             codeFilePath: 'documentation/group/buttons.tsx'
+        },
+        {
+            name: 'Inputs',
+            uid: 'inputs',
+            code: <ExampleInputs />,
+            codeFilePath: 'documentation/group/inputs.tsx'
         }
     ]
 }
