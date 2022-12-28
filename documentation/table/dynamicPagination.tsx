@@ -1,4 +1,4 @@
-import { Table, TableBody, TableCell, TableColumn, TableFooter, TableHeader, TablePagination, TableRow } from "../../reactiumui";
+import { Table, TableBody, TableCell, TableColumn, TableFooter, TableHeader, TablePagination, TableRow } from "reactiumui";
 
 const ExampleDynamicPagination: React.FunctionComponent = () => {
     const loadMore = async (rowsPerPage: number, page: number) => {

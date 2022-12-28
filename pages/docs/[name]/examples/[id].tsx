@@ -2,7 +2,7 @@ import { GetServerSideProps, NextPage } from "next";
 import Error from "next/error";
 import { useEffect } from "react";
 import { GetComponentDoc } from "../../../../documentation";
-import { ReactiumThemeProvider, useReactiumTheme } from "../../../../reactiumui";
+import { ReactiumThemeProvider, useReactiumTheme } from "reactiumui";
 
 export const getServerSideProps: GetServerSideProps = async (context) => {
     return {

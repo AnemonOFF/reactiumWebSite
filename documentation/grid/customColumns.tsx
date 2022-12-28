@@ -1,4 +1,4 @@
-import { Card, Grid, GridItem } from "../../reactiumui";
+import { Card, Grid, GridItem } from "reactiumui";
 
 const ExampleCustomColumns: React.FunctionComponent = () => {
     return (

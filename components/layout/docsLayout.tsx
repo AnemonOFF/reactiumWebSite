@@ -2,7 +2,7 @@ import Link from "next/link";
 import React, { useMemo } from "react";
 import { GetComponentsNames } from "../../documentation";
 import { DocData } from "../../documentation/types";
-import { CSS, Container, Grid, GridItem, GridRow, Navbar, NavbarCollapse, NavbarContent, NavbarItem, NavbarLink, NavbarToggle, Text, List, ListItem, styled } from "../../reactiumui";
+import { CSS, Container, Grid, GridItem, GridRow, Navbar, NavbarCollapse, NavbarContent, NavbarItem, NavbarLink, NavbarToggle, Text, List, ListItem, styled } from "reactiumui";
 import ThemeToggle from "../themeToggle";
 import NavCollapseLink from "./navCollapseLink";
 import Sidebar from "./sidebar";

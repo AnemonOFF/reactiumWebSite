@@ -1,8 +1,8 @@
-import { Input } from "../../reactiumui";
+import { Input } from "reactiumui";
 
 const ExampleCompact: React.FunctionComponent = () => {
     return (
-        <Input compact html={{placeholder: 'compact'}} />
+        <Input compact placeholder="compact" />
     )
 }
 

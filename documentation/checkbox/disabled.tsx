@@ -1,4 +1,4 @@
-import { Checkbox } from "../../reactiumui"
+import { Checkbox } from "reactiumui";
 
 const ExampleDisabled: React.FunctionComponent = () => {
     return (

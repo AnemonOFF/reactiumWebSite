@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { styled, Table, TableBody, TableCell, TableColumn, TableHeader, TableRow } from "../../reactiumui";
+import { styled, Table, TableBody, TableCell, TableColumn, TableHeader, TableRow, Radio, Checkbox } from "reactiumui";
 
 const StyledFooter = styled('div', {
     position: 'fixed',
@@ -17,6 +17,7 @@ const StyledFooter = styled('div', {
 
 const StyledWrapper = styled('div', {
     p: '$md',
+    display: 'flex',
     '& label': {
         m: 10
     },
@@ -48,9 +49,7 @@ const ExampleStyleVariants: React.FunctionComponent = () => {
 
     return (
         <div style={{padding: 20, background: enableBG ? 'url(https://i.pinimg.com/originals/fb/3f/c3/fb3fc3b7b58832c7f302273675121df4.jpg) no-repeat' : 'transparent'}}>
-            <label htmlFor="bg">
-                <input type="checkbox" id='bg' onChange={() => setEnableBG(old => !old)} checked={enableBG} />background
-            </label>
+            <Checkbox onChange={() => setEnableBG(old => !old)} checked={enableBG}>background</Checkbox>
             <Table type={type} cloud={cloud} bordered={border} blur={blur} zebra={zebra} hoverable={hoverable} wrapperCss={{mt: 20}}>
                 <TableHeader>
                     <TableColumn>Id</TableColumn>
@@ -75,32 +74,16 @@ const ExampleStyleVariants: React.FunctionComponent = () => {
             </Table>
             <StyledFooter>
                 <StyledWrapper>
-                    <label htmlFor="typeDefault">
-                        <input type='radio' id='typeDefault' name='type' value='default' onChange={() => setType('default')} checked={type == 'default'} />default
-                    </label>
-                    <label htmlFor="typeSquare">
-                        <input type='radio' id='typeSquare' name='type' value='square' onChange={() => setType('square')} checked={type == 'square'} />square
-                    </label>
-                    <label htmlFor="typeCircle">
-                        <input type='radio' id='typeCircle' name='type' value='circle' onChange={() => setType('circle')} checked={type == 'circle'} />circle
-                    </label>
+                    <Radio checked={type == 'default'} onChange={() => setType('default')}>default</Radio>
+                    <Radio checked={type == 'square'} onChange={() => setType('square')}>square</Radio>
+                    <Radio checked={type == 'circle'} onChange={() => setType('circle')}>circle</Radio>
                 </StyledWrapper>
                 <StyledWrapper>
-                    <label htmlFor='border'>
-                        <input type='checkbox' id='border' onChange={() => setBorder(old => !old)} checked={border} />border
-                    </label>
-                    <label htmlFor='cloud'>
-                        <input type='checkbox' id='cloud' onChange={() => setCloud(old => !old)} checked={cloud} />cloud
-                    </label>
-                    <label htmlFor='blur'>
-                        <input type='checkbox' id='blur' onChange={() => setBlur(old => !old)} checked={blur} />blur
-                    </label>
-                    <label htmlFor='zebra'>
-                        <input type='checkbox' id='zebra' onChange={() => setZebra(old => !old)} checked={zebra} />zebra
-                    </label>
-                    <label htmlFor='hoverable'>
-                        <input type='checkbox' id='hoverable' onChange={() => setHoverable(old => !old)} checked={hoverable} />hoverable
-                    </label>
+                    <Checkbox checked={border} onChange={() => setBorder(old => !old)}>border</Checkbox>
+                    <Checkbox checked={cloud} onChange={() => setCloud(old => !old)}>cloud</Checkbox>
+                    <Checkbox checked={blur} onChange={() => setBlur(old => !old)}>blur</Checkbox>
+                    <Checkbox checked={zebra} onChange={() => setZebra(old => !old)}>zebra</Checkbox>
+                    <Checkbox checked={hoverable} onChange={() => setHoverable(old => !old)}>hoverable</Checkbox>
                 </StyledWrapper>
             </StyledFooter>
         </div>

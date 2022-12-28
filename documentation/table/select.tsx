@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Table, TableBody, TableCell, TableColumn, TableHeader, TableRow } from "../../reactiumui";
+import { Table, TableBody, TableCell, TableColumn, TableHeader, TableRow, Checkbox } from "reactiumui";
 
 const data = [
     {id: 1, name: 'Andrew', age: 27, gender: 'Male', job: 'Doctor', country: 'Canada'},
@@ -16,7 +16,7 @@ const ExampleSelect: React.FunctionComponent = () => {
     const [selectedUids, setSelectedUids] = useState<string[]>([]);
 
     const onSelectChange = (uids: string[]) => {
-        //setSelectedUids(uids);
+        setSelectedUids(uids);
     }
 
     return (
@@ -25,9 +25,7 @@ const ExampleSelect: React.FunctionComponent = () => {
                 <option value="single">single</option>
                 <option value="multiple">multiple</option>
             </select>
-            <label htmlFor="hideCheckboxes">
-                <input type="checkbox" id="hideCheckboxes" checked={hideCheckboxes} onChange={() => setHideCheckboxes(old => !old)} disabled={selectType == 'single'} /> hide checkboxes
-            </label>
+            <Checkbox checked={hideCheckboxes} onChange={() => setHideCheckboxes(old => !old)} disabled={selectType == 'single'}>hide checkboxes</Checkbox>
             <Table select={selectType} hideCheckboxColumn={hideCheckboxes} onSelectChange={onSelectChange} selectedUids={selectedUids}>
                 <TableHeader>
                     <TableColumn>Id</TableColumn>

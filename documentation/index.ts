@@ -11,6 +11,7 @@ import group from './group';
 import checkbox from './checkbox';
 import radio from './radio';
 import input from './input';
+import modal from './modal';
 
 const components = [
     card,
@@ -26,6 +27,7 @@ const components = [
     checkbox,
     radio,
     input,
+    modal,
 ]
 
 export const GetComponentsNames = () => components.map(c => c.name);

@@ -1,6 +1,5 @@
-import { useRouter } from "next/router";
 import React from "react"
-import { styled } from "../reactiumui";
+import { styled } from "reactiumui";
 import CopyIcon from "./copyIcon";
 
 interface Props {

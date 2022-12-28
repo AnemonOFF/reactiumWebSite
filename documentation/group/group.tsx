@@ -1,6 +1,7 @@
 import { apiRows } from "../common";
 import { DocData } from "../types";
 import ExampleButtons from "./buttons";
+import ExampleCombo from "./combo";
 import ExampleInputs from "./inputs";
 
 const GroupDoc: DocData = {
@@ -11,7 +12,9 @@ const GroupDoc: DocData = {
             name: 'Group props',
             rows: [
                 apiRows['children'],
-                { attribute: 'borderWidth', isRequired: false, type: ['number', 'string'], default: '1px', version: '1.0.0', description: 'Set it if you use items with custom border-width CSS property' },
+                { attribute: 'borderWidth', isRequired: false, type: ['number', 'string'], default: '1px', version: '1.0.0-beta.1', description: 'Set it if you use items with custom border-width CSS property' },
+                apiRows['hideOnMedia'],
+                apiRows['showOnMedia'],
                 apiRows['css'],
                 apiRows['html'],
             ]
@@ -29,6 +32,12 @@ const GroupDoc: DocData = {
             uid: 'inputs',
             code: <ExampleInputs />,
             codeFilePath: 'documentation/group/inputs.tsx'
+        },
+        {
+            name: 'Combo',
+            uid: 'combo',
+            code: <ExampleCombo />,
+            codeFilePath: 'documentation/group/combo.tsx'
         }
     ]
 }

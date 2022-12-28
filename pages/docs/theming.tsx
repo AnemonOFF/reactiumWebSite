@@ -1,7 +1,7 @@
 import { NextPage } from "next";
 import Head from "next/head";
 import DocsLayout from "../../components/layout/docsLayout";
-import { Text } from "../../reactiumui";
+import { Text } from "reactiumui";
 
 const ThemingPage: NextPage = () => {
     return (

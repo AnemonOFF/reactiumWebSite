@@ -1,6 +1,6 @@
 import { AiFillSetting } from "react-icons/ai";
 import { MdFavorite, MdFavoriteBorder } from "react-icons/md";
-import { Checkbox } from "../../reactiumui"
+import { Checkbox } from "reactiumui";
 
 const ExampleIcons: React.FunctionComponent = () => {
     return (

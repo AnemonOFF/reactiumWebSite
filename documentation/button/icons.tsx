@@ -1,4 +1,4 @@
-import { Button } from "../../reactiumui";
+import { Button } from "reactiumui";
 import { AiFillCaretDown, AiFillSetting } from "react-icons/ai";
 
 const ExampleIcons: React.FunctionComponent = () => {

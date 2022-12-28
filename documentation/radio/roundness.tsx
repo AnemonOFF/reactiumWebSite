@@ -1,4 +1,4 @@
-import { Radio } from "../../reactiumui"
+import { Radio } from "reactiumui";
 
 const ExampleRoundness: React.FunctionComponent = () => {
     return (

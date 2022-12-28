@@ -1,5 +1,5 @@
 import React from "react";
-import { Container, Text, CSS, List, styled, Card } from "../../reactiumui";
+import { Container, Text, CSS, List, styled, Card } from "reactiumui";
 import ThemeToggle from "../themeToggle";
 import NavListLink from "./navListLink";
 

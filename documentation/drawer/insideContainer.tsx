@@ -1,14 +1,14 @@
 import { useState } from "react";
-import { Drawer, Text } from "../../reactiumui";
+import { Drawer, Text, Button } from "reactiumui";
 
 const ExampleInsideContainer: React.FunctionComponent = () => {
     const [isOpen, setIsOpen] = useState(false);
 
     return (
         <div style={{position: 'relative', overflow: 'hidden'}}>
-            <button onClick={() => setIsOpen(old => !old)}>
+            <Button onClick={() => setIsOpen(old => !old)}>
                 Open
-            </button>
+            </Button>
             <Text>
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam finibus ut nibh at sodales. Nulla ut commodo velit. Morbi rhoncus mauris et massa porttitor fringilla. Nam tempor laoreet nisi, quis porttitor purus porttitor nec. Aenean iaculis eros tempus arcu imperdiet tempor. Nam malesuada odio metus, sed venenatis arcu pretium ac. In commodo rutrum nunc a aliquet. Mauris eu felis venenatis, vestibulum nisl vitae, tempus turpis. Nulla facilisi. Donec sollicitudin ullamcorper ante, a ultricies elit pellentesque vehicula. In dolor ante, tristique ut volutpat ut, tristique in dolor. Cras sed odio ac odio porta faucibus. Aliquam pretium ipsum eros, sed ullamcorper quam molestie quis.
             </Text>

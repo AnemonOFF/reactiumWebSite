@@ -1,7 +1,7 @@
 import Link from "next/link";
 import React from "react";
 import useActiveLink from "../../hooks/useActiveLink";
-import { ListItem, styled, VariantProps } from "../../reactiumui";
+import { ListItem, styled, VariantProps } from "reactiumui";
 
 const StyledLink = styled('a', {
     cursor: 'pointer',

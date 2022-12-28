@@ -1,4 +1,4 @@
-import { Text, Navbar, NavbarContent, NavbarItem, NavbarLink, NavbarToggle } from "../../reactiumui";
+import { Text, Navbar, NavbarContent, NavbarItem, NavbarLink, NavbarToggle } from "reactiumui";
 
 const ExampleCollapseAutoFill: React.FunctionComponent = () => {
     return (

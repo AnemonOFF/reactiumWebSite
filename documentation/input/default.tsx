@@ -1,8 +1,8 @@
-import { Input } from "../../reactiumui";
+import { Input } from "reactiumui";
 
 const ExampleDefault: React.FunctionComponent = () => {
     return (
-        <Input html={{placeholder: 'default'}} />
+        <Input placeholder="default" />
     )
 }
 

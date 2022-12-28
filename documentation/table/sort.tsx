@@ -1,5 +1,5 @@
 import { ReactNode } from "react";
-import { Table, TableBody, TableCell, TableColumn, TableHeader, TableRow } from "../../reactiumui";
+import { Table, TableBody, TableCell, TableColumn, TableHeader, TableRow } from "reactiumui";
 
 const data = [
     {id: 1, name: 'Andrew', age: 27, gender: 'Male', job: 'Doctor', country: 'Canada'},

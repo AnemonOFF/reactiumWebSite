@@ -1,4 +1,4 @@
-import { Radio } from "../../reactiumui"
+import { Radio } from "reactiumui";
 
 const ExampleColors: React.FunctionComponent = () => {
     return (

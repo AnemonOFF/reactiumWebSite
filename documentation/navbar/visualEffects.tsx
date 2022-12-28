@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Text, Navbar, NavbarContent, NavbarItem, NavbarLink, styled } from "../../reactiumui";
+import { Text, Navbar, NavbarContent, NavbarItem, NavbarLink, styled, Radio, Checkbox } from "reactiumui";
 
 const StyledFooter = styled('div', {
     position: 'fixed',
@@ -16,6 +16,7 @@ const StyledFooter = styled('div', {
 
 const StyledWrapper = styled('div', {
     p: '$md',
+    display: 'flex',
     '& label': {
         m: 10
     },
@@ -68,32 +69,16 @@ const ExampleVisualEffects: React.FunctionComponent = () => {
             </div>
             <StyledFooter>
                 <StyledWrapper>
-                    <label htmlFor="typeStatic">
-                        <input type='radio' id='typeStatic' name='type' value='static' onChange={() => setType('static')} checked={type == 'static'} />static
-                    </label>
-                    <label htmlFor="typeSticky">
-                        <input type='radio' id='typeSticky' name='type' value='sticky' onChange={() => setType('sticky')} checked={type == 'sticky'} />sticky
-                    </label>
-                    <label htmlFor="typeCloud">
-                        <input type='radio' id='typeCloud' name='type' value='cloud' onChange={() => setType('cloud')} checked={type == 'cloud'} />cloud
-                    </label>
+                    <Radio checked={type == 'static'} onChange={() => setType('static')}>static</Radio>
+                    <Radio checked={type == 'sticky'} onChange={() => setType('sticky')}>sticky</Radio>
+                    <Radio checked={type == 'cloud'} onChange={() => setType('cloud')}>cloud</Radio>
                 </StyledWrapper>
                 <StyledWrapper>
-                    <label htmlFor='compact'>
-                        <input type='checkbox' id='compact' onChange={() => setIsCompact(old => !old)} checked={isCompact} />compact
-                    </label>
-                    <label htmlFor='border'>
-                        <input type='checkbox' id='border' onChange={() => setIsBordered(old => !old)} checked={isBordered} />bordered
-                    </label>
-                    <label htmlFor='square'>
-                        <input type='checkbox' id='square' onChange={() => setIsSquare(old => !old)} checked={isSquare} />square
-                    </label>
-                    <label htmlFor='disableBlur'>
-                        <input type='checkbox' id='disableBlur' onChange={() => setDisableBlur(old => !old)} checked={disableBlur} />disableBlur
-                    </label>
-                    <label htmlFor='disableShadow'>
-                        <input type='checkbox' id='disableShadow' onChange={() => setDisableShadow(old => !old)} checked={disableShadow} />disableShadow
-                    </label>
+                    <Checkbox checked={isCompact} onChange={() => setIsCompact(old => !old)}>compact</Checkbox>
+                    <Checkbox checked={isBordered} onChange={() => setIsBordered(old => !old)}>bordered</Checkbox>
+                    <Checkbox checked={isSquare} onChange={() => setIsSquare(old => !old)}>square</Checkbox>
+                    <Checkbox checked={disableBlur} onChange={() => setDisableBlur(old => !old)}>disableBlur</Checkbox>
+                    <Checkbox checked={disableShadow} onChange={() => setDisableShadow(old => !old)}>disableShadow</Checkbox>
                 </StyledWrapper>
             </StyledFooter>
         </>

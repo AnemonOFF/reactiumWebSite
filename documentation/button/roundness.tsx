@@ -1,4 +1,4 @@
-import { Button } from "../../reactiumui";
+import { Button } from "reactiumui";
 
 const ExampleRoundness: React.FunctionComponent = () => {
     return (

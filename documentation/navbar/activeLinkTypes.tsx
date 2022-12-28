@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Text, Navbar, NavbarContent, NavbarItem, NavbarLink, styled } from "../../reactiumui";
+import { Text, Navbar, NavbarContent, NavbarItem, NavbarLink, styled, Radio } from "reactiumui";
 
 const StyledFooter = styled('div', {
     position: 'fixed',
@@ -16,6 +16,7 @@ const StyledFooter = styled('div', {
 
 const StyledWrapper = styled('div', {
     p: '$md',
+    display: 'flex',
     '& label': {
         m: 10
     },
@@ -58,40 +59,20 @@ const ExampleActiveLinkTypes: React.FunctionComponent = () => {
             </div>
             <StyledFooter>
                 <StyledWrapper>
-                    <label htmlFor="typeStatic">
-                        <input type='radio' id='typeStatic' name='type' value='static' onChange={() => setType('static')} checked={type == 'static'} />static
-                    </label>
-                    <label htmlFor="typeSticky">
-                        <input type='radio' id='typeSticky' name='type' value='sticky' onChange={() => setType('sticky')} checked={type == 'sticky'} />sticky
-                    </label>
-                    <label htmlFor="typeCloud">
-                        <input type='radio' id='typeCloud' name='type' value='cloud' onChange={() => setType('cloud')} checked={type == 'cloud'} />cloud
-                    </label>
+                    <Radio checked={type == 'static'} onChange={() => setType('static')}>static</Radio>
+                    <Radio checked={type == 'sticky'} onChange={() => setType('sticky')}>sticky</Radio>
+                    <Radio checked={type == 'cloud'} onChange={() => setType('cloud')}>cloud</Radio>
                 </StyledWrapper>
                 <StyledWrapper>
-                    <label htmlFor="activeColor">
-                        <input type='radio' id='activeColor' name='active' value='color' onChange={() => setActiveType('color')} checked={activeType == 'color'} />color
-                    </label>
-                    <label htmlFor="activeBackground">
-                        <input type='radio' id='activeBackground' name='active' value='background' onChange={() => setActiveType('background')} checked={activeType == 'background'} />background
-                    </label>
-                    <label htmlFor="activeUnderline">
-                        <input type='radio' id='activeUnderline' name='active' value='underline' onChange={() => setActiveType('underline')} checked={activeType == 'underline'} />underline
-                    </label>
+                    <Radio checked={activeType == 'color'} onChange={() => setActiveType('color')}>color</Radio>
+                    <Radio checked={activeType == 'background'} onChange={() => setActiveType('background')}>background</Radio>
+                    <Radio checked={activeType == 'underline'} onChange={() => setActiveType('underline')}>underline</Radio>
                 </StyledWrapper>
                 <StyledWrapper>
-                    <label htmlFor="colorPrimary">
-                        <input type='radio' id='colorPrimary' name='activeColor' value='primary' onChange={() => setActiveColor('primary')} checked={activeColor == 'primary'} />primary
-                    </label>
-                    <label htmlFor="colorError">
-                        <input type='radio' id='colorError' name='activeColor' value='error' onChange={() => setActiveColor('error')} checked={activeColor == 'error'} />error
-                    </label>
-                    <label htmlFor="colorSuccess">
-                        <input type='radio' id='colorSuccess' name='activeColor' value='success' onChange={() => setActiveColor('success')} checked={activeColor == 'success'} />success
-                    </label>
-                    <label htmlFor="colorCustom">
-                        <input type='radio' id='colorCustom' name='activeColor' value='#5C2D91' onChange={() => setActiveColor('#5C2D91')} checked={activeColor == '#5C2D91'} />custom
-                    </label>
+                    <Radio checked={activeColor == 'primary'} onChange={() => setActiveColor('primary')}>primary</Radio>
+                    <Radio checked={activeColor == 'error'} onChange={() => setActiveColor('error')}>error</Radio>
+                    <Radio checked={activeColor == 'success'} onChange={() => setActiveColor('success')}>success</Radio>
+                    <Radio checked={activeColor == '#5C2D91'} onChange={() => setActiveColor('#5C2D91')}>custom</Radio>
                 </StyledWrapper>
             </StyledFooter>
         </>

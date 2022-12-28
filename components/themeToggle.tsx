@@ -1,5 +1,5 @@
 import React from "react";
-import { styled, useReactiumTheme } from "../reactiumui";
+import { styled, useReactiumTheme } from "reactiumui";
 
 const StyledButton = styled('button', {
     background: 'transparent',

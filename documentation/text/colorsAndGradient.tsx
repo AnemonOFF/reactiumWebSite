@@ -1,4 +1,4 @@
-import { Container, Text } from "../../reactiumui";
+import { Container, Text } from "reactiumui";
 
 const ExampleColorsAndGradient: React.FunctionComponent = () => {
 

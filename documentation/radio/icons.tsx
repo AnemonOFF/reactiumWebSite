@@ -1,6 +1,6 @@
 import { AiFillSetting } from "react-icons/ai";
 import { MdFavorite, MdFavoriteBorder } from "react-icons/md";
-import { Radio } from "../../reactiumui"
+import { Radio } from "reactiumui";
 
 const ExampleIcons: React.FunctionComponent = () => {
     return (

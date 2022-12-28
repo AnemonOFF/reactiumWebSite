@@ -5,7 +5,7 @@ import Code from "../../../components/code";
 import DocsLayout from "../../../components/layout/docsLayout";
 import Resizable from "../../../components/resizable";
 import { GetComponentDoc } from "../../../documentation";
-import { List, ListItem, styled, Table, TableBody, TableCell, TableColumn, TableHeader, TableRow, Text } from "../../../reactiumui";
+import { List, ListItem, Table, TableBody, TableCell, TableColumn, TableHeader, TableRow, Text } from "reactiumui";
 import { useEffect } from "react";
 import Prism from "prismjs";
 import "prismjs/themes/prism-okaidia.min.css";

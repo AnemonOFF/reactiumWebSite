@@ -1,4 +1,4 @@
-import { Card, Container, Text } from "../../reactiumui";
+import { Card, Container, Text } from "reactiumui";
 
 const ExampleBackground: React.FunctionComponent = () => {
     return (

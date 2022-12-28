@@ -1,4 +1,4 @@
-import { Table, TableBody, TableCell, TableColumn, TableHeader, TableRow } from "../../reactiumui";
+import { Table, TableBody, TableCell, TableColumn, TableHeader, TableRow } from "reactiumui";
 
 const ExampleInfinityScroll: React.FunctionComponent = () => {
     const loadMore = async (rowsPerPage: number, page: number) => {

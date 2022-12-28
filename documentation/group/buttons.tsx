@@ -1,4 +1,4 @@
-import { Button, Group } from "../../reactiumui"
+import { Button, Group } from "reactiumui";
 
 const ExampleButtons: React.FunctionComponent = () => {
     return (

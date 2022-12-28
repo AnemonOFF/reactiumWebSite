@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from "react";
-import { styled } from "../reactiumui";
+import { styled } from "reactiumui";
 import CopyIcon from "./copyIcon";
 
 export type CodeProps = {

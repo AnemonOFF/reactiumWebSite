@@ -1,5 +1,5 @@
 import { Html, Head, Main, NextScript } from 'next/document';
-import { cssTextStyle } from '../reactiumui';
+import { cssTextStyle } from 'reactiumui';
 
 export default function Document() {
     return (

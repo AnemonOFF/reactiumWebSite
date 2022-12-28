@@ -1,4 +1,4 @@
-import { Text, Navbar, NavbarContent, NavbarItem, NavbarLink, styled } from "../../reactiumui";
+import { Text, Navbar, NavbarContent, NavbarItem, NavbarLink, styled } from "reactiumui";
 
 const ExampleHideOnScroll: React.FunctionComponent = () => {
     return (

@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Text, Navbar, NavbarContent, NavbarItem, NavbarLink, styled } from "../../reactiumui";
+import { Text, Navbar, NavbarContent, NavbarItem, NavbarLink, styled, Radio } from "reactiumui";
 
 const StyledWrapper = styled('div', {
     position: 'fixed',
@@ -49,15 +49,11 @@ const ExampleTypes: React.FunctionComponent = () => {
                 <Text>Donec augue turpis, rhoncus eu tempor ac, viverra id quam. Morbi hendrerit sapien quam, ut venenatis diam cursus non. Nullam ut semper elit. Suspendisse potenti. Duis at commodo nulla. Mauris porttitor ante at massa sodales, sit amet fermentum enim consequat. Maecenas quis congue lacus, eget congue mauris. Nulla ornare congue turpis ut mattis. Curabitur tempor a ipsum sit amet cursus. Curabitur vitae mi varius magna fermentum aliquet non quis sem. Mauris posuere arcu sed ipsum tempus laoreet. Integer urna tellus, porttitor a quam accumsan, facilisis porta dolor. Duis nibh augue, fringilla sodales elit eget, sagittis ultricies lorem. Pellentesque tincidunt fermentum facilisis. Aliquam sagittis consequat enim eget accumsan. Aenean vulputate et enim eget consequat.</Text>
             </div>
             <StyledWrapper>
-                <label htmlFor="typeStatic">
-                    <input type='radio' id='typeStatic' name='type' value='static' onChange={() => setType('static')} checked={type == 'static'} />static
-                </label>
-                <label htmlFor="typeSticky">
-                    <input type='radio' id='typeSticky' name='type' value='sticky' onChange={() => setType('sticky')} checked={type == 'sticky'} />sticky
-                </label>
-                <label htmlFor="typeCloud">
-                    <input type='radio' id='typeCloud' name='type' value='cloud' onChange={() => setType('cloud')} checked={type == 'cloud'} />cloud
-                </label>
+                <div style={{display: 'flex'}}>
+                    <Radio checked={type == 'static'} onChange={() => setType('static')}>static</Radio>
+                    <Radio checked={type == 'sticky'} onChange={() => setType('sticky')}>sticky</Radio>
+                    <Radio checked={type == 'cloud'} onChange={() => setType('cloud')}>cloud</Radio>
+                </div>
             </StyledWrapper>
         </>
     )

@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Drawer, Text } from "../../reactiumui";
+import { Drawer, Text, Button, Group } from "reactiumui";
 
 const ExamplePlacements: React.FunctionComponent = () => {
     const [opened, setOpened] = useState<'top' | 'bottom' | 'left' | 'right'>();
@@ -7,11 +7,13 @@ const ExamplePlacements: React.FunctionComponent = () => {
 
     return (
         <>
-            {placements.map(p => (
-                <button key={p} onClick={() => setOpened(p)}>
-                    {p}
-                </button>
-            ))}
+            <Group>
+                {placements.map(p => (
+                    <Button key={p} onClick={() => setOpened(p)} type="border">
+                        {p}
+                    </Button>
+                ))}
+            </Group>
             <Drawer isOpen={opened !== undefined} placement={opened} onWrapperClick={() => setOpened(undefined)} css={{p: '$md'}}>
                 <Text h2>Hello world!</Text>
             </Drawer>

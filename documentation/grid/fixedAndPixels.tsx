@@ -1,4 +1,4 @@
-import { Card, Grid, GridItem, GridRow } from "../../reactiumui";
+import { Card, Grid, GridItem, GridRow } from "reactiumui";
 
 const ExampleFixedAndPixels: React.FunctionComponent = () => {
     return (

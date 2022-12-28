@@ -1,7 +1,7 @@
 import Link from "next/link";
 import React from "react";
 import useActiveLink from "../../hooks/useActiveLink";
-import { NavbarCollapseLink } from "../../reactiumui";
+import { NavbarCollapseLink } from "reactiumui";
 
 interface Props {
     children?: React.ReactNode,

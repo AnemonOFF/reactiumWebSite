@@ -1,4 +1,4 @@
-import { List, ListItem } from "../../reactiumui";
+import { List, ListItem } from "reactiumui";
 
 const ExampleOtherListStyleType: React.FunctionComponent = () => {
     return (

@@ -1,5 +1,5 @@
-import React, { PropsWithChildren, ReactNode, useEffect, useLayoutEffect, useRef, useState } from "react";
-import { styled } from "../reactiumui";
+import React, { ReactNode, useEffect, useRef, useState } from "react";
+import { styled } from "reactiumui";
 
 const StyledResizer = styled('div', {
     position: 'absolute',

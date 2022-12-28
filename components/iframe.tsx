@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from "react";
-import { styled, useReactiumTheme } from "../reactiumui";
+import { styled, useReactiumTheme } from "reactiumui";
 
 const StyledFrame = styled('iframe', {
     p: 0,
