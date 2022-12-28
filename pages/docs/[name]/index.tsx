@@ -13,6 +13,7 @@ import "prismjs/plugins/line-numbers/prism-line-numbers.min.css";
 import Iframe from "../../../components/iframe";
 import { readFileSync } from "fs";
 import Linker from "../../../components/linker";
+import path from "path";
 require("prismjs/components/prism-jsx.min.js");
 require("prismjs/components/prism-tsx.min.js");
 require("prismjs/plugins/line-numbers/prism-line-numbers.min.js");
@@ -22,7 +23,7 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
     const doc = GetComponentDoc(name);
     let codes;
     if(doc !== undefined)
-        codes = Object.fromEntries(doc.examples.map(e => [e.uid, readFileSync(e.codeFilePath).toString()]));
+        codes = Object.fromEntries(doc.examples.map(e => [e.uid, path.join(process.cwd(), readFileSync(e.codeFilePath).toString())]));
 
     return {
         props: {
