@@ -23,7 +23,7 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
     const doc = GetComponentDoc(name);
     let codes;
     if(doc !== undefined)
-        codes = Object.fromEntries(doc.examples.map(e => [e.uid, readFileSync(path.join(process.cwd(), e.codeFilePath), 'utf-8').toString()]));
+        codes = Object.fromEntries(doc.examples.map(e => [e.uid, readFileSync(path.join(process.cwd(), '/' + e.codeFilePath), 'utf-8').toString()]));
 
     return {
         props: {
