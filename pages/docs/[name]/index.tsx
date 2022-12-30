@@ -19,8 +19,8 @@ require("prismjs/components/prism-tsx.min.js");
 require("prismjs/plugins/line-numbers/prism-line-numbers.min.js");
 
 export const getServerSideProps: GetServerSideProps = async (context) => {
-    const { readFileSync } = require("fs");
-    var path = require("path");
+    const { readFileSync } = await import("fs");
+    var path = await import("path");
     const docsDirectory = path.resolve(process.cwd(), "documentation");
     const name = context.query.name as string;
     const doc = GetComponentDoc(name);
