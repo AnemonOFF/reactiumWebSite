@@ -4,10 +4,11 @@ import { GetServerSideProps, NextPage } from "next";
 
 export const getServerSideProps: GetServerSideProps = async (context) => {
     const { readFileSync } = require("fs");
-    const path = require("path");
+    var path = require("path");
+    const docsDirectory = path.resolve(process.cwd(), "documentation");
     console.log(process.cwd());
     console.log(__dirname);
-    const pathToFile = path.join(process.cwd(), 'documentation', (context.query.doc as string) ?? 'button', `${context.query.example ?? 'colors'}.tsx`);
+    const pathToFile = path.join(docsDirectory, (context.query.doc as string) ?? 'card', `${context.query.example ?? 'default'}.tsx`);
     console.log(pathToFile);
     let code = readFileSync(pathToFile, 'utf-8');
 

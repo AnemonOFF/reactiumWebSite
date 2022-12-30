@@ -37,14 +37,14 @@ const CardDoc: DocData = {
             description: 'By default card will fill full width of its parent element',
             isResponsive: false,
             code: <ExampleDefault />,
-            codeFilePath: 'documentation/card/default.tsx'
+            codeFilePath: 'card/default.tsx'
         },
         {
             name: 'Types',
             uid: 'types',
             isResponsive: false,
             code: <ExampleTypes />,
-            codeFilePath: 'documentation/card/types.tsx'
+            codeFilePath: 'card/types.tsx'
         },
         {
             name: 'Bordered',
@@ -52,7 +52,7 @@ const CardDoc: DocData = {
             isResponsive: false,
             description: 'Card can be with it`s own border',
             code: <ExampleBordered />,
-            codeFilePath: 'documentation/card/bordered.tsx'
+            codeFilePath: 'card/bordered.tsx'
         },
         {
             name: 'Background',
@@ -60,21 +60,21 @@ const CardDoc: DocData = {
             isResponsive: false,
             description: 'You can set card background color that you want',
             code: <ExampleBackground />,
-            codeFilePath: 'documentation/card/background.tsx'
+            codeFilePath: 'card/background.tsx'
         },
         {
             name: 'Square',
             uid: 'square',
             isResponsive: false,
             code: <ExampleSquare />,
-            codeFilePath: 'documentation/card/square.tsx'
+            codeFilePath: 'card/square.tsx'
         },
         {
             name: 'Pressable',
             uid: 'pressable',
             isResponsive: false,
             code: <ExamplePressable />,
-            codeFilePath: 'documentation/card/pressable.tsx'
+            codeFilePath: 'card/pressable.tsx'
         }
     ]
 }
