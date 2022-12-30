@@ -1,9 +1,12 @@
 import { GetServerSideProps, NextPage } from "next";
-import { readFileSync } from "fs";
-import path from "path";
+// import { readFileSync } from "fs";
+// import path from "path";
 
 export const getServerSideProps: GetServerSideProps = async (context) => {
-    console.log(context.query);
+    const { readFileSync } = require("fs");
+    const path = require("path");
+    console.log(process.cwd());
+    console.log(__dirname);
     const pathToFile = path.join(process.cwd(), 'documentation', (context.query.doc as string) ?? 'button', `${context.query.example ?? 'colors'}.tsx`);
     console.log(pathToFile);
     let code = readFileSync(pathToFile, 'utf-8');
