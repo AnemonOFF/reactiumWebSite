@@ -1,5 +1,6 @@
 import { apiRows } from "../common";
 import { DocData } from "../types";
+import Codes from "./codes";
 import ExampleDynamicPagination from "./dynamicPagination";
 import ExampleInfinityScroll from "./infinityScroll";
 import ExamplePagination from "./pagination";
@@ -127,43 +128,50 @@ const TableDoc: DocData = {
             isFramed: true,
             isResponsive: true,
             code: <ExampleStyleVariants />,
-            codeFilePath: 'documentation/table/styleVariants.tsx'
+            codeString: Codes['stylevariants'],
+            // codeFilePath: 'documentation/table/styleVariants.tsx'
         },
         {
             name: 'Sorting',
-            uid: 'sorting',
+            uid: 'sort',
             code: <ExampleSort />,
-            codeFilePath: 'documentation/table/sort.tsx'
+            codeString: Codes['sort'],
+            // codeFilePath: 'documentation/table/sort.tsx'
         },
         {
             name: 'Select',
             uid: 'select',
             code: <ExampleSelect />,
-            codeFilePath: 'documentation/table/select.tsx'
+            codeString: Codes['select'],
+            // codeFilePath: 'documentation/table/select.tsx'
         },
         {
             name: 'Resizable columns',
             uid: 'resizablecolumns',
             code: <ExampleResizableColumns />,
-            codeFilePath: 'documentation/table/resizableColumns.tsx'
+            codeString: Codes['resizablecolumns'],
+            // codeFilePath: 'documentation/table/resizableColumns.tsx'
         },
         {
             name: 'Pagination',
             uid: 'pagination',
             code: <ExamplePagination />,
-            codeFilePath: 'documentation/table/pagination.tsx'
+            codeString: Codes['pagination'],
+            // codeFilePath: 'documentation/table/pagination.tsx'
         },
         {
             name: 'Dynamic pagination',
             uid: 'dynamicpagination',
             code: <ExampleDynamicPagination />,
-            codeFilePath: 'documentation/table/dynamicPagination.tsx'
+            codeString: Codes['dynamicpagination'],
+            // codeFilePath: 'documentation/table/dynamicPagination.tsx'
         },
         {
             name: 'Infinity scroll',
             uid: 'infinityscroll',
             code: <ExampleInfinityScroll />,
-            codeFilePath: 'documentation/table/infinityScroll.tsx'
+            codeString: Codes['infinityscroll'],
+            // codeFilePath: 'documentation/table/infinityScroll.tsx'
         },
     ]
 }

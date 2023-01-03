@@ -1,5 +1,6 @@
 import { apiRows } from "../common";
 import { DocData } from "../types";
+import Codes from "./codes";
 import ExampleCustomMarker from "./customMarker";
 import ExampleDefault from "./default";
 import ExampleOtherListStyleType from "./otherListStyleType";
@@ -47,26 +48,30 @@ const ListDoc: DocData = {
             name: 'Default',
             uid: 'default',
             code: <ExampleDefault />,
-            codeFilePath: 'documentation/list/default.tsx'
+            codeString: Codes['default'],
+            // codeFilePath: 'documentation/list/default.tsx'
         },
         {
             name: 'Unordered georgian',
             uid: 'unorderedgeorgian',
             description: 'If you want to disable reactium styles for marker, set \'defaultMarkerStyle\' to item',
             code: <ExampleUnorderedGeorgian />,
-            codeFilePath: 'documentation/list/unorderedGeorgian.tsx'
+            codeString: Codes['default'],
+            // codeFilePath: 'documentation/list/unorderedGeorgian.tsx'
         },
         {
             name: 'Other list style type',
             uid: 'otherliststyletype',
             code: <ExampleOtherListStyleType />,
-            codeFilePath: 'documentation/list/otherListStyleType.tsx'
+            codeString: Codes['default'],
+            // codeFilePath: 'documentation/list/otherListStyleType.tsx'
         },
         {
             name: 'Custom marker',
             uid: 'custommarker',
             code: <ExampleCustomMarker />,
-            codeFilePath: 'documentation/list/customMarker.tsx'
+            codeString: Codes['default'],
+            // codeFilePath: 'documentation/list/customMarker.tsx'
         }
     ]
 }

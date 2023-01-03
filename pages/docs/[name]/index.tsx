@@ -11,22 +11,22 @@ import Prism from "prismjs";
 import "prismjs/themes/prism-okaidia.min.css";
 import "prismjs/plugins/line-numbers/prism-line-numbers.min.css";
 import Iframe from "../../../components/iframe";
-// import { readFileSync } from "fs";
 import Linker from "../../../components/linker";
-// import path from "path";
+import path from "path";
 require("prismjs/components/prism-jsx.min.js");
 require("prismjs/components/prism-tsx.min.js");
 require("prismjs/plugins/line-numbers/prism-line-numbers.min.js");
 
 export const getServerSideProps: GetServerSideProps = async (context) => {
-    const { readFileSync } = await import("fs");
-    var path = await import("path");
-    const docsDirectory = path.resolve(process.cwd(), "documentation");
+    path.resolve("documentation");
     const name = context.query.name as string;
     const doc = GetComponentDoc(name);
-    let codes;
-    if(doc !== undefined)
-        codes = Object.fromEntries(doc.examples.map(e => [e.uid, readFileSync(path.join(docsDirectory, e.codeFilePath), 'utf-8').toString()]));
+    let codes: {[uid: string]: string} = {};
+    if(doc !== undefined){
+        doc.examples.forEach((example) => {
+            codes[example.uid] = example.codeString;
+        })
+    }
 
     return {
         props: {

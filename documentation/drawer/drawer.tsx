@@ -1,5 +1,6 @@
 import { apiRows } from "../common";
 import { DocData } from "../types";
+import Codes from "./codes";
 import ExampleDefault from "./default";
 import ExampleInsideContainer from "./insideContainer";
 import ExamplePlacements from "./placements";
@@ -35,31 +36,36 @@ const TextDoc: DocData = {
             name: 'Default',
             uid: 'default',
             code: <ExampleDefault />,
-            codeFilePath: 'documentation/drawer/default.tsx'
+            codeString: Codes['default'],
+            // codeFilePath: 'documentation/drawer/default.tsx'
         },
         {
             name: 'Style variants',
             uid: 'stylevariants',
             code: <ExampleStyleVariants />,
-            codeFilePath: 'documentation/drawer/styleVariants.tsx'
+            codeString: Codes['stylevariants'],
+            // codeFilePath: 'documentation/drawer/styleVariants.tsx'
         },
         {
             name: 'Placements',
             uid: 'placements',
             code: <ExamplePlacements />,
-            codeFilePath: 'documentation/drawer/placements.tsx'
+            codeString: Codes['placements'],
+            // codeFilePath: 'documentation/drawer/placements.tsx'
         },
         {
             name: 'Custom size',
             uid: 'size',
             code: <ExampleSize />,
-            codeFilePath: 'documentation/drawer/size.tsx'
+            codeString: Codes['size'],
+            // codeFilePath: 'documentation/drawer/size.tsx'
         },
         {
             name: 'Inside container',
-            uid: 'insideContainer',
+            uid: 'insidecontainer',
             code: <ExampleInsideContainer />,
-            codeFilePath: 'documentation/drawer/insideContainer.tsx'
+            codeString: Codes['insidecontainer'],
+            // codeFilePath: 'documentation/drawer/insideContainer.tsx'
         },
     ]
 }

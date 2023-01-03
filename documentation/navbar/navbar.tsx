@@ -8,6 +8,7 @@ import ExampleCollapse from "./collapse";
 import ExampleFullScreenCollapse from "./fullScreenCollapse";
 import ExampleActiveLinkTypes from "./activeLinkTypes";
 import ExampleCollapseAutoFill from "./collapseAutoFill";
+import Codes from "./codes";
 
 const NavbarDoc: DocData = {
     name: 'Navbar',
@@ -144,7 +145,8 @@ const NavbarDoc: DocData = {
             isFramed: true,
             isResponsive: true,
             code: <ExampleTypes />,
-            codeFilePath: 'documentation/navbar/types.tsx'
+            codeString: Codes['types'],
+            // codeFilePath: 'documentation/navbar/types.tsx'
         },
         {
             name: 'Visual effects',
@@ -152,7 +154,8 @@ const NavbarDoc: DocData = {
             isFramed: true,
             isResponsive: true,
             code: <ExampleVisualEffects />,
-            codeFilePath: 'documentation/navbar/visualeffects.tsx'
+            codeString: Codes['visualeffects'],
+            // codeFilePath: 'documentation/navbar/visualeffects.tsx'
         },
         {
             name: 'Active link types',
@@ -161,21 +164,24 @@ const NavbarDoc: DocData = {
             isFramed: true,
             isResponsive: true,
             code: <ExampleActiveLinkTypes />,
-            codeFilePath: 'documentation/navbar/activeLinkTypes.tsx'
+            codeString: Codes['activelinktypes'],
+            // codeFilePath: 'documentation/navbar/activeLinkTypes.tsx'
         },
         {
             name: 'Compact on scroll',
             uid: 'compactonscroll',
             isFramed: true,
             code: <ExampleCompactOnScroll />,
-            codeFilePath: 'documentation/navbar/compactOnScroll.tsx'
+            codeString: Codes['compactonscroll'],
+            // codeFilePath: 'documentation/navbar/compactOnScroll.tsx'
         },
         {
             name: 'Hide on scroll',
             uid: 'hideonscroll',
             isFramed: true,
             code: <ExampleHideOnScroll />,
-            codeFilePath: 'documentation/navbar/hideOnScroll.tsx'
+            codeString: Codes['hideonscroll'],
+            // codeFilePath: 'documentation/navbar/hideOnScroll.tsx'
         },
         {
             name: 'Collapse',
@@ -184,7 +190,8 @@ const NavbarDoc: DocData = {
             isFramed: true,
             isResponsive: true,
             code: <ExampleCollapse />,
-            codeFilePath: 'documentation/navbar/collapse.tsx'
+            codeString: Codes['collapse'],
+            // codeFilePath: 'documentation/navbar/collapse.tsx'
         },
         {
             name: 'Collapse auto fill',
@@ -193,7 +200,8 @@ const NavbarDoc: DocData = {
             isFramed: true,
             isResponsive: true,
             code: <ExampleCollapseAutoFill />,
-            codeFilePath: 'documentation/navbar/collapseautofill.tsx'
+            codeString: Codes['collapseautofill'],
+            // codeFilePath: 'documentation/navbar/collapseautofill.tsx'
         },
         {
             name: 'Fullscreen collapse',
@@ -201,7 +209,8 @@ const NavbarDoc: DocData = {
             isFramed: true,
             isResponsive: true,
             code: <ExampleFullScreenCollapse />,
-            codeFilePath: 'documentation/navbar/fullScreenCollapse.tsx'
+            codeString: Codes['fullscreencollapse'],
+            // codeFilePath: 'documentation/navbar/fullScreenCollapse.tsx'
         },
     ]
 }

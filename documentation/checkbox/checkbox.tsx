@@ -1,5 +1,6 @@
 import { apiRows } from "../common";
 import { DocData } from "../types";
+import Codes from "./codes";
 import ExampleColors from "./colors";
 import ExampleDefault from "./default";
 import ExampleDisabled from "./disabled";
@@ -44,49 +45,57 @@ const CheckboxDoc: DocData = {
             name: 'Default',
             uid: 'default',
             code: <ExampleDefault />,
-            codeFilePath: 'documentation/checkbox/default.tsx'
+            codeString: Codes['default'],
+            // codeFilePath: 'documentation/checkbox/default.tsx'
         },
         {
             name: 'Disabled',
             uid: 'disabled',
             code: <ExampleDisabled />,
-            codeFilePath: 'documentation/checkbox/disabled.tsx'
+            codeString: Codes['disabled'],
+            // codeFilePath: 'documentation/checkbox/disabled.tsx'
         },
         {
             name: 'Roundness',
             uid: 'roundness',
             code: <ExampleRoundness />,
-            codeFilePath: 'documentation/checkbox/roundness.tsx'
+            codeString: Codes['roundness'],
+            // codeFilePath: 'documentation/checkbox/roundness.tsx'
         },
         {
             name: 'Size',
             uid: 'size',
             code: <ExampleSize />,
-            codeFilePath: 'documentation/checkbox/size.tsx'
+            codeString: Codes['size'],
+            // codeFilePath: 'documentation/checkbox/size.tsx'
         },
         {
             name: 'Colors',
             uid: 'colors',
             code: <ExampleColors />,
-            codeFilePath: 'documentation/checkbox/colors.tsx'
+            codeString: Codes['colors'],
+            // codeFilePath: 'documentation/checkbox/colors.tsx'
         },
         {
             name: 'Label colors',
             uid: 'labelcolors',
             code: <ExampleLabelColors />,
-            codeFilePath: 'documentation/checkbox/labelColors.tsx'
+            codeString: Codes['labelcolors'],
+            // codeFilePath: 'documentation/checkbox/labelColors.tsx'
         },
         {
             name: 'Indeterminate',
             uid: 'indeterminate',
             code: <ExampleIndeterminate />,
-            codeFilePath: 'documentation/checkbox/indeterminate.tsx'
+            codeString: Codes['indeterminate'],
+            // codeFilePath: 'documentation/checkbox/indeterminate.tsx'
         },
         {
             name: 'Icons',
             uid: 'icons',
             code: <ExampleIcons />,
-            codeFilePath: 'documentation/checkbox/icons.tsx'
+            codeString: Codes['icons'],
+            // codeFilePath: 'documentation/checkbox/icons.tsx'
         }
     ]
 }

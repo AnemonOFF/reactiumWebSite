@@ -1,5 +1,6 @@
 import { apiRows } from "../common";
 import { DocData } from "../types";
+import Codes from "./codes";
 import ExampleColors from "./colors";
 import ExampleCompact from "./compact";
 import ExampleFontAndBorder from "./fontAndBorder";
@@ -42,43 +43,50 @@ const ButtonDoc: DocData = {
             name: 'Types',
             uid: 'types',
             code: <ExampleTypes />,
-            codeFilePath: 'documentation/button/types.tsx'
+            codeString: Codes['types'],
+            // codeFilePath: 'documentation/button/types.tsx'
         },
         {
             name: 'Roundness',
             uid: 'roundness',
             code: <ExampleRoundness />,
-            codeFilePath: 'documentation/button/roundness.tsx'
+            codeString: Codes['roundness'],
+            // codeFilePath: 'documentation/button/roundness.tsx'
         },
         {
             name: 'Colors',
             uid: 'colors',
             code: <ExampleColors />,
-            codeFilePath: 'documentation/button/colors.tsx'
+            codeString: Codes['colors'],
+            // codeFilePath: 'documentation/button/colors.tsx'
         },
         {
             name: 'Sizes',
             uid: 'sizes',
             code: <ExampleSizes />,
-            codeFilePath: 'documentation/button/sizes.tsx'
+            codeString: Codes['sizes'],
+            // codeFilePath: 'documentation/button/sizes.tsx'
         },
         {
             name: 'Compact',
             uid: 'compact',
             code: <ExampleCompact />,
-            codeFilePath: 'documentation/button/compact.tsx'
+            codeString: Codes['compact'],
+            // codeFilePath: 'documentation/button/compact.tsx'
         },
         {
             name: 'Font and border',
             uid: 'fontandborder',
             code: <ExampleFontAndBorder />,
-            codeFilePath: 'documentation/button/fontAndBorder.tsx'
+            codeString: Codes['fontandborder'],
+            // codeFilePath: 'documentation/button/fontAndBorder.tsx'
         },
         {
             name: 'Icons',
             uid: 'icons',
             code: <ExampleIcons />,
-            codeFilePath: 'documentation/button/icons.tsx'
+            codeString: Codes['icons'],
+            // codeFilePath: 'documentation/button/icons.tsx'
         }
     ]
 }

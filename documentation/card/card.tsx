@@ -2,6 +2,7 @@ import { apiRows } from '../common';
 import { DocData } from '../types';
 import ExampleBackground from './background';
 import ExampleBordered from './bordered';
+import Codes from './codes';
 import ExampleDefault from './default';
 import ExamplePressable from './pressable';
 import ExampleSquare from './square';
@@ -37,14 +38,16 @@ const CardDoc: DocData = {
             description: 'By default card will fill full width of its parent element',
             isResponsive: false,
             code: <ExampleDefault />,
-            codeFilePath: 'card/default.tsx'
+            codeString: Codes['default'],
+            // codeFilePath: 'card/default.tsx'
         },
         {
             name: 'Types',
             uid: 'types',
             isResponsive: false,
             code: <ExampleTypes />,
-            codeFilePath: 'card/types.tsx'
+            codeString: Codes['types'],
+            // codeFilePath: 'card/types.tsx'
         },
         {
             name: 'Bordered',
@@ -52,7 +55,8 @@ const CardDoc: DocData = {
             isResponsive: false,
             description: 'Card can be with it`s own border',
             code: <ExampleBordered />,
-            codeFilePath: 'card/bordered.tsx'
+            codeString: Codes['bordered'],
+            // codeFilePath: 'card/bordered.tsx'
         },
         {
             name: 'Background',
@@ -60,21 +64,24 @@ const CardDoc: DocData = {
             isResponsive: false,
             description: 'You can set card background color that you want',
             code: <ExampleBackground />,
-            codeFilePath: 'card/background.tsx'
+            codeString: Codes['background'],
+            // codeFilePath: 'card/background.tsx'
         },
         {
             name: 'Square',
             uid: 'square',
             isResponsive: false,
             code: <ExampleSquare />,
-            codeFilePath: 'card/square.tsx'
+            codeString: Codes['square'],
+            // codeFilePath: 'card/square.tsx'
         },
         {
             name: 'Pressable',
             uid: 'pressable',
             isResponsive: false,
             code: <ExamplePressable />,
-            codeFilePath: 'card/pressable.tsx'
+            codeString: Codes['pressable'],
+            // codeFilePath: 'card/pressable.tsx'
         }
     ]
 }

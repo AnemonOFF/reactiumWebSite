@@ -1,5 +1,6 @@
 import { apiRows } from "../common";
 import { DocData } from "../types";
+import Codes from "./codes";
 import ExampleColors from "./colors";
 import ExampleCompact from "./compact";
 import ExampleDefault from "./default";
@@ -46,49 +47,57 @@ const InputDoc: DocData = {
             name: 'Default',
             uid: 'default',
             code: <ExampleDefault />,
-            codeFilePath: 'documentation/input/default.tsx'
+            codeString: Codes['default'],
+            // codeFilePath: 'documentation/input/default.tsx'
         },
         {
             name: 'Compact',
             uid: 'compact',
             code: <ExampleCompact />,
-            codeFilePath: 'documentation/input/compact.tsx'
+            codeString: Codes['compact'],
+            // codeFilePath: 'documentation/input/compact.tsx'
         },
         {
             name: 'Pre(-post)fix',
             uid: 'prepostfix',
             code: <ExamplePrePost />,
-            codeFilePath: 'documentation/input/prepost.tsx'
+            codeString: Codes['prepost'],
+            // codeFilePath: 'documentation/input/prepost.tsx'
         },
         {
             name: 'Colors',
             uid: 'colors',
             code: <ExampleColors />,
-            codeFilePath: 'documentation/input/colors.tsx'
+            codeString: Codes['colors'],
+            // codeFilePath: 'documentation/input/colors.tsx'
         },
         {
             name: 'Text colors',
             uid: 'textcolors',
             code: <ExampleTextColors />,
-            codeFilePath: 'documentation/input/textColors.tsx'
+            codeString: Codes['textcolors'],
+            // codeFilePath: 'documentation/input/textColors.tsx'
         },
         {
             name: 'Label',
             uid: 'label',
             code: <ExampleLabel />,
-            codeFilePath: 'documentation/input/label.tsx'
+            codeString: Codes['label'],
+            // codeFilePath: 'documentation/input/label.tsx'
         },
         {
             name: 'Sizes',
             uid: 'sizes',
             code: <ExampleSizes />,
-            codeFilePath: 'documentation/input/sizes.tsx'
+            codeString: Codes['sizes'],
+            // codeFilePath: 'documentation/input/sizes.tsx'
         },
         {
             name: 'Font and border',
             uid: 'fontandborder',
             code: <ExampleFontAndBorder />,
-            codeFilePath: 'documentation/input/fontAndBorder.tsx'
+            codeString: Codes['fontandborder'],
+            // codeFilePath: 'documentation/input/fontAndBorder.tsx'
         }
     ]
 }

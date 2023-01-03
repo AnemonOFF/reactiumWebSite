@@ -1,5 +1,6 @@
 import { apiRows } from "../common";
 import { DocData } from "../types";
+import Codes from "./codes";
 import ExampleColors from "./colors";
 import ExampleDefault from "./default";
 import ExampleDisabled from "./disabled";
@@ -44,49 +45,57 @@ const RadioDoc: DocData = {
             name: 'Default',
             uid: 'default',
             code: <ExampleDefault />,
-            codeFilePath: 'documentation/radio/default.tsx'
+            codeString: Codes['default'],
+            // codeFilePath: 'documentation/radio/default.tsx'
         },
         {
             name: 'Disabled',
             uid: 'disabled',
             code: <ExampleDisabled />,
-            codeFilePath: 'documentation/radio/disabled.tsx'
+            codeString: Codes['disabled'],
+            // codeFilePath: 'documentation/radio/disabled.tsx'
         },
         {
             name: 'Roundness',
             uid: 'roundness',
             code: <ExampleRoundness />,
-            codeFilePath: 'documentation/radio/roundness.tsx'
+            codeString: Codes['roundness'],
+            // codeFilePath: 'documentation/radio/roundness.tsx'
         },
         {
             name: 'Size',
             uid: 'size',
             code: <ExampleSize />,
-            codeFilePath: 'documentation/radio/size.tsx'
+            codeString: Codes['size'],
+            // codeFilePath: 'documentation/radio/size.tsx'
         },
         {
             name: 'Colors',
             uid: 'colors',
             code: <ExampleColors />,
-            codeFilePath: 'documentation/radio/colors.tsx'
+            codeString: Codes['colors'],
+            // codeFilePath: 'documentation/radio/colors.tsx'
         },
         {
             name: 'Label colors',
             uid: 'labelcolors',
             code: <ExampleLabelColors />,
-            codeFilePath: 'documentation/radio/labelColors.tsx'
+            codeString: Codes['labelcolors'],
+            // codeFilePath: 'documentation/radio/labelColors.tsx'
         },
         {
             name: 'Indeterminate',
             uid: 'indeterminate',
             code: <ExampleIndeterminate />,
-            codeFilePath: 'documentation/radio/indeterminate.tsx'
+            codeString: Codes['indeterminate'],
+            // codeFilePath: 'documentation/radio/indeterminate.tsx'
         },
         {
             name: 'Icons',
             uid: 'icons',
             code: <ExampleIcons />,
-            codeFilePath: 'documentation/radio/icons.tsx'
+            codeString: Codes['icons'],
+            // codeFilePath: 'documentation/radio/icons.tsx'
         }
     ]
 }

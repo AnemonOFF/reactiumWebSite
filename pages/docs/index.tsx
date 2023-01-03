@@ -44,6 +44,23 @@ yarn add reactiumui`} language="markup" />
 // import Button from 'reactiumui/button';
 const MyComponent = () => <Button>Press Me</Button>
 export default MyComponent;`} language="tsx" />
+                <Text h4>If you are using NextJS add this to your _document file</Text>
+                <Code code={`import { Html, Head, Main, NextScript } from 'next/document';
+import { cssTextStyle } from 'reactiumui';
+
+export default function Document() {
+    return (
+        <Html>
+            <Head>
+                {cssTextStyle()}
+            </Head>
+            <body>
+                <Main />
+                <NextScript />
+            </body>
+        </Html>
+    )
+}`} language="tsx" />
             </DocsLayout>
         </>
     );

@@ -1,5 +1,6 @@
 import { apiRows } from "../common";
 import { DocData } from "../types";
+import Codes from "./codes";
 import ExampleCustomColumns from "./customColumns";
 import ExampleDefault from "./default";
 import ExampleFixedAndPixels from "./fixedAndPixels";
@@ -72,7 +73,8 @@ const GridDoc: DocData = {
             uid: 'default',
             isResponsive: true,
             code: <ExampleDefault />,
-            codeFilePath: 'documentation/grid/default.tsx'
+            codeString: Codes['default'],
+            // codeFilePath: 'documentation/grid/default.tsx'
         },
         {
             name: 'Custom columns',
@@ -80,7 +82,8 @@ const GridDoc: DocData = {
             description: 'By default, grid have 12 columns, if you want custom count, just set it by \'columns\' tag. To create new row, just fill previous.',
             isResponsive: true,
             code: <ExampleCustomColumns />,
-            codeFilePath: 'documentation/grid/customColumns.tsx'
+            codeString: Codes['customcolumns'],
+            // codeFilePath: 'documentation/grid/customColumns.tsx'
         },
         {
             name: 'Rows',
@@ -88,7 +91,8 @@ const GridDoc: DocData = {
             description: 'If you want to use habitual rows, you can. Moreover, you can set custom count of columns for each row',
             isResponsive: true,
             code: <ExampleRows />,
-            codeFilePath: 'documentation/grid/rows.tsx'
+            codeString: Codes['rows'],
+            // codeFilePath: 'documentation/grid/rows.tsx'
         },
         {
             name: 'Gap',
@@ -96,7 +100,8 @@ const GridDoc: DocData = {
             description: 'To set space size between items, use columnGap, rowGap or gap (combines the previous two) tags. Of course, you can set for each GridRow custom value of columnGap',
             isResponsive: true,
             code: <ExampleGap />,
-            codeFilePath: 'documentation/grid/gap.tsx'
+            codeString: Codes['gap'],
+            // codeFilePath: 'documentation/grid/gap.tsx'
         },
         {
             name: 'Fixed and pixels',
@@ -104,7 +109,8 @@ const GridDoc: DocData = {
             description: 'If you want to make one of the item be fixed with width in pixels, set flat \'fixed\' and set width as columns. To make this item responsive, set \'fixed\' to \'max\'',
             isResponsive: true,
             code: <ExampleFixedAndPixels />,
-            codeFilePath: 'documentation/grid/fixedAndPixels.tsx'
+            codeString: Codes['fixedandpixels'],
+            // codeFilePath: 'documentation/grid/fixedAndPixels.tsx'
         }
     ]
 }

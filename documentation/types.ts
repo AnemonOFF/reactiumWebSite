@@ -5,7 +5,8 @@ export type DocExample = {
     name: string,
     description?: string,
     code: ReactNode,
-    codeFilePath: string,
+    // codeFilePath: string,
+    codeString: string,
     isResponsive?: boolean,
     isFramed?: boolean,
 }
@@ -32,4 +33,8 @@ export type DocData = {
     useCases?: string[],
     examples: DocExample[],
     apis: DocApi[]
+}
+
+export type ExampleCodes = {
+    [uid: string]: string
 }

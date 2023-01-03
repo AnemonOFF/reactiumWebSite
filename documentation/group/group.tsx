@@ -1,6 +1,7 @@
 import { apiRows } from "../common";
 import { DocData } from "../types";
 import ExampleButtons from "./buttons";
+import Codes from "./codes";
 import ExampleCombo from "./combo";
 import ExampleInputs from "./inputs";
 
@@ -25,19 +26,22 @@ const GroupDoc: DocData = {
             name: 'Buttons',
             uid: 'buttons',
             code: <ExampleButtons />,
-            codeFilePath: 'documentation/group/buttons.tsx'
+            codeString: Codes['buttons'],
+            // codeFilePath: 'documentation/group/buttons.tsx'
         },
         {
             name: 'Inputs',
             uid: 'inputs',
             code: <ExampleInputs />,
-            codeFilePath: 'documentation/group/inputs.tsx'
+            codeString: Codes['inputs'],
+            // codeFilePath: 'documentation/group/inputs.tsx'
         },
         {
             name: 'Combo',
             uid: 'combo',
             code: <ExampleCombo />,
-            codeFilePath: 'documentation/group/combo.tsx'
+            codeString: Codes['combo'],
+            // codeFilePath: 'documentation/group/combo.tsx'
         }
     ]
 }

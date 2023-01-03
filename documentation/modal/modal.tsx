@@ -1,5 +1,6 @@
 import { apiRows } from "../common";
 import { DocData } from "../types";
+import Codes from "./codes";
 import ExampleDefault from "./default";
 import ExampleInsideContainer from "./insideContainer";
 import ExamplePlacements from "./placements";
@@ -36,31 +37,36 @@ const ModalDoc: DocData = {
             name: 'Default',
             uid: 'default',
             code: <ExampleDefault />,
-            codeFilePath: 'documentation/modal/default.tsx'
+            codeString: Codes['default'],
+            // codeFilePath: 'documentation/modal/default.tsx'
         },
         {
             name: 'Style variants',
             uid: 'stylevariants',
             code: <ExampleStyleVariants />,
-            codeFilePath: 'documentation/modal/stylevariants.tsx'
+            codeString: Codes['stylevariants'],
+            // codeFilePath: 'documentation/modal/stylevariants.tsx'
         },
         {
             name: 'Placements',
             uid: 'placements',
             code: <ExamplePlacements />,
-            codeFilePath: 'documentation/modal/placements.tsx'
+            codeString: Codes['placements'],
+            // codeFilePath: 'documentation/modal/placements.tsx'
         },
         {
             name: 'Size',
             uid: 'size',
             code: <ExampleSize />,
-            codeFilePath: 'documentation/modal/size.tsx'
+            codeString: Codes['size'],
+            // codeFilePath: 'documentation/modal/size.tsx'
         },
         {
             name: 'Inside container',
             uid: 'insidecontainer',
             code: <ExampleInsideContainer />,
-            codeFilePath: 'documentation/modal/insidecontainer.tsx'
+            codeString: Codes['insidecontainer'],
+            // codeFilePath: 'documentation/modal/insidecontainer.tsx'
         }
     ]
 }

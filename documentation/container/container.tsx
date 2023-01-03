@@ -1,6 +1,7 @@
 import { apiBreakpointsRows, apiRows } from '../common';
 import { DocData } from '../types';
 import ExampleCentralized from './centralized';
+import Codes from './codes';
 import ExampleDefault from './default';
 import ExampleFixedWidth from './fixedWidth';
 import ExamplePositions from './positions';
@@ -37,21 +38,24 @@ const ContainerDoc: DocData = {
             name: 'Default',
             uid: 'default',
             code: <ExampleDefault />,
-            codeFilePath: 'documentation/container/default.tsx'
+            codeString: Codes['default'],
+            // codeFilePath: 'documentation/container/default.tsx'
         },
         {
             isResponsive: true,
             name: 'Fixed width',
             uid: 'fixedwidth',
             code: <ExampleFixedWidth />,
-            codeFilePath: 'documentation/container/fixedWidth.tsx'
+            codeString: Codes['fixedwidth'],
+            // codeFilePath: 'documentation/container/fixedWidth.tsx'
         },
         {
             isResponsive: true,
             name: 'Centralized',
             uid: 'centralized',
             code: <ExampleCentralized />,
-            codeFilePath: 'documentation/container/centralized.tsx'
+            codeString: Codes['centralized'],
+            // codeFilePath: 'documentation/container/centralized.tsx'
         },
         {
             name: 'Positions',
@@ -60,7 +64,8 @@ const ContainerDoc: DocData = {
             isResponsive: true,
             description: 'Change elements count by pressing \'+1\' and \'-1\' buttons and look what`s happening. That`s working same for width',
             code: <ExamplePositions />,
-            codeFilePath: 'documentation/container/positions.tsx'
+            codeString: Codes['positions'],
+            // codeFilePath: 'documentation/container/positions.tsx'
         }
     ],
 };

@@ -1,5 +1,6 @@
 import { apiRows } from "../common";
 import { DocData } from "../types";
+import Codes from "./codes";
 import ExampleColorsAndGradient from "./colorsAndGradient";
 import ExampleQuote from "./quote";
 import ExampleTags from "./tags";
@@ -41,21 +42,24 @@ const TextDoc: DocData = {
             uid: 'tags',
             description: 'You can set any text tag you want, or more than one',
             code: <ExampleTags />,
-            codeFilePath: 'documentation/text/tags.tsx'
+            codeString: Codes['tags'],
+            // codeFilePath: 'documentation/text/tags.tsx'
         },
         {
             name: 'Quote',
             uid: 'quote',
             description: 'To make quote just set \'blockquote\' tag. To remove quote symbols, set \'blockquote\' tag to \'clear\'',
             code: <ExampleQuote />,
-            codeFilePath: 'documentation/text/quote.tsx'
+            codeString: Codes['quote'],
+            // codeFilePath: 'documentation/text/quote.tsx'
         },
         {
             name: 'Colors and gradient',
             uid: 'colorsandgradient',
             description: 'You can set any color / gradient you want or themed colors without \'$\' symbol',
             code: <ExampleColorsAndGradient />,
-            codeFilePath: 'documentation/text/colorsAndGradient.tsx'
+            codeString: Codes['colorsandgradient'],
+            // codeFilePath: 'documentation/text/colorsAndGradient.tsx'
         }
     ]
 }
